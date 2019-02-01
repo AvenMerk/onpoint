@@ -8,6 +8,8 @@ class App extends Component {
         animationBottom: "animate-it-bottom",
         animationFromBottom: "animate-it-from-bottom",
         animationToTop: "animate-it-to-top",
+        animationToRight: "animate-it-to-right",
+        animationToRightX2: "animate-it-to-right-2",
         // bgArray: document.getElementById('container').children,
     };
 
@@ -43,29 +45,33 @@ class App extends Component {
         }
     };
 
+    addAnimateToRightClass = () => {
+        const bgArray = document.getElementById('box3').children;
+        for (let i = 0; i < bgArray.length; i++) {
+            bgArray[i].classList.add(this.state.animationToRight);
+        }
+    };
+
     render() {
         return (
             <div id="container">
                 <Swipeable onSwipeUp={this.addAnimateTopClass}>
-                    <div className="background-1" />
+                    <div className="background-1"/>
                     {/*<img src={"/img/bg1.svg"} />*/}
                 </Swipeable>
                 <div className="blur-1-2"/>
                 <Swipeable onSwipeUp={this.addAnimateBottomClass} onSwipeDown={this.addAnimateToTopClass}>
-                    <div className="background-2" />
+                    <div className="background-2"/>
                     {/*<img src={"/img/bg2.svg"} />*/}
                 </Swipeable>
                 <div className="blur-2-3"/>
                 <Swipeable onSwipeDown={this.addAnimateFromBottomClass}>
-                    <div className="background-3-1" />
-                    {/*<img src={"/img/bg3_1.png"} />*/}
+                    <div id="box3">
+                        <div className="background-3-1"/>
+                        <div className="background-3-2"/>
+                        <div className="background-3-3"/>
+                    </div>
                 </Swipeable>
-                {/*<div className="background-3-2 ">*/}
-                {/*<img src={"/img/bg3_2.png"} />*/}
-                {/*</div>*/}
-                {/*<div className="background-3-3 ">*/}
-                {/*<img src={"/img/bg3_3.png"} />*/}
-                {/*</div>*/}
             </div>
         );
     }

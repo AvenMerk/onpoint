@@ -3,6 +3,12 @@
   overflow: hidden;
 }
 
+#box3 {
+  overflow: auto;
+  white-space: nowrap;
+  background: url("/img/bg3.png");
+}
+
 .background-1 {
   height: 100vh;
   background: url('/img/bg1.png') no-repeat;
@@ -24,6 +30,20 @@
   animation-fill-mode: forwards;
 }
 
+.animate-it-to-right {
+  animation-name: to-right;
+  position: relative;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.animate-it-to-right-2 {
+  animation-name: to-right-2;
+  position: relative;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
 @keyframes top {
   0%   {top: 0}
   100% {top: -100vh}
@@ -33,6 +53,17 @@
   0%   {top: -100vh}
   100% {top: -200vh}
 }
+
+@keyframes to-right {
+  0%   {left: 0}
+  100% {left: 100vw}
+}
+
+@keyframes to-right-2 {
+  0%   {left: 100vw}
+  100% {left: 200vw}
+}
+
 
 /*comeback animation*/
 
@@ -68,21 +99,24 @@
 }
 
 .background-3-1 {
+  display: inline-block;
   height: 100vh;
-  background-image: url('/img/bg3_1.png');
-
+  width: 100vw;
+  background-image: url('/img/scheme3_1.png');
 }
 
 .background-3-2 {
+  display: inline-block;
   height: 100vh;
-  /*background-image: url('/img/bg3_2.png');*/
-
+  width: 100vw;
+  background-image: url('/img/scheme3_2.png');
 }
 
 .background-3-3 {
+  display: inline-block;
   height: 100vh;
-  /*background-image: url('/img/bg3_3.png');*/
-
+  width: 100vw;
+  background-image: url('/img/scheme3_3.png');
 }
 
 .blur-1-2 {
