@@ -57,19 +57,17 @@ class App extends Component {
             <div id="container">
                 <Swipeable onSwipeUp={this.addAnimateTopClass}>
                     <div className="background-1"/>
-                    {/*<img src={"/img/bg1.svg"} />*/}
                 </Swipeable>
                 <div className="blur-1-2"/>
                 <Swipeable onSwipeUp={this.addAnimateBottomClass} onSwipeDown={this.addAnimateToTopClass}>
                     <div className="background-2"/>
-                    {/*<img src={"/img/bg2.svg"} />*/}
                 </Swipeable>
                 <div className="blur-2-3"/>
-                <Swipeable onSwipeDown={this.addAnimateFromBottomClass}>
+                <Swipeable onSwipeDown={this.addAnimateFromBottomClass} onSwipeRight={this.addAnimateToRightClass}>
                     <div id="box3">
-                        <div className="background-3-1"/>
-                        <div className="background-3-2"/>
                         <div className="background-3-3"/>
+                        <div className="background-3-2"/>
+                        <div className="background-3-1"/>
                     </div>
                 </Swipeable>
             </div>
