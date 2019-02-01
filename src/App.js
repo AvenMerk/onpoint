@@ -1,28 +1,74 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Swipeable } from 'react-touch';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    state = {
+        animationTop: "animate-it-top",
+        animationBottom: "animate-it-bottom",
+        animationFromBottom: "animate-it-from-bottom",
+        animationToTop: "animate-it-to-top",
+        // bgArray: document.getElementById('container').children,
+    };
+
+    addAnimateTopClass = () => {
+        const bgArray = document.getElementById('container').children;
+        for (let i = 0; i < bgArray.length; i++) {
+            bgArray[i].classList.remove(this.state.animationToTop);
+            bgArray[i].classList.add(this.state.animationTop);
+        }
+    };
+
+    addAnimateBottomClass = () => {
+        const bgArray = document.getElementById('container').children;
+        for (let i = 0; i < bgArray.length; i++) {
+            bgArray[i].classList.add(this.state.animationBottom);
+        }
+    };
+
+    addAnimateFromBottomClass = () => {
+        const bgArray = document.getElementById('container').children;
+        for (let i = 0; i < bgArray.length; i++) {
+            bgArray[i].classList.add(this.state.animationFromBottom);
+            bgArray[i].classList.remove(this.state.animationBottom);
+        }
+    };
+
+    addAnimateToTopClass = () => {
+        const bgArray = document.getElementById('container').children;
+        for (let i = 0; i < bgArray.length; i++) {
+            bgArray[i].classList.add(this.state.animationToTop);
+            bgArray[i].classList.remove(this.state.animationTop);
+            bgArray[i].classList.remove(this.state.animationFromBottom);
+        }
+    };
+
+    render() {
+        return (
+            <div id="container">
+                <Swipeable onSwipeUp={this.addAnimateTopClass}>
+                    <div className="background-1" />
+                    {/*<img src={"/img/bg1.svg"} />*/}
+                </Swipeable>
+                <div className="blur-1-2"/>
+                <Swipeable onSwipeUp={this.addAnimateBottomClass} onSwipeDown={this.addAnimateToTopClass}>
+                    <div className="background-2" />
+                    {/*<img src={"/img/bg2.svg"} />*/}
+                </Swipeable>
+                <div className="blur-2-3"/>
+                <Swipeable onSwipeDown={this.addAnimateFromBottomClass}>
+                    <div className="background-3-1" />
+                    {/*<img src={"/img/bg3_1.png"} />*/}
+                </Swipeable>
+                {/*<div className="background-3-2 ">*/}
+                {/*<img src={"/img/bg3_2.png"} />*/}
+                {/*</div>*/}
+                {/*<div className="background-3-3 ">*/}
+                {/*<img src={"/img/bg3_3.png"} />*/}
+                {/*</div>*/}
+            </div>
+        );
+    }
 }
 
 export default App;

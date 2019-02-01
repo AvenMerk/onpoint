@@ -1,32 +1,105 @@
-.App {
-  text-align: center;
+#container {
+  max-height: 100vh;
+  overflow: hidden;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.background-1 {
+  height: 100vh;
+  background: url('/img/bg1.png') no-repeat;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/*animation for first 3 slides*/
+
+.animate-it-top {
+  animation-name: top;
+  position: relative;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
 
-.App-link {
-  color: #61dafb;
+.animate-it-bottom {
+  animation-name: bottom;
+  position: relative;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes top {
+  0%   {top: 0}
+  100% {top: -100vh}
 }
+
+@keyframes bottom {
+  0%   {top: -100vh}
+  100% {top: -200vh}
+}
+
+/*comeback animation*/
+
+.animate-it-to-top {
+  animation-name: to-top;
+  position: relative;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.animate-it-from-bottom {
+  animation-name: from-bottom;
+  position: relative;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes to-top {
+  0%   {top: -100vh}
+  100% {top: 0}
+}
+
+@keyframes from-bottom {
+  0%   {top: -200vh}
+  100% {top: -100vh}
+}
+/**/
+
+.background-2 {
+  height: 100vh;
+  background: url('/img/bg2.png') no-repeat;
+
+}
+
+.background-3-1 {
+  height: 100vh;
+  background-image: url('/img/bg3_1.png');
+
+}
+
+.background-3-2 {
+  height: 100vh;
+  /*background-image: url('/img/bg3_2.png');*/
+
+}
+
+.background-3-3 {
+  height: 100vh;
+  /*background-image: url('/img/bg3_3.png');*/
+
+}
+
+.blur-1-2 {
+  filter: blur(20px) ;
+  height: 100px;
+  margin: -50px -10px -50px -10px;
+  overflow: visible;
+  z-index: 100;
+  background-image: linear-gradient(#5cbeec, #5cbeec, #0877de);
+}
+
+.blur-2-3 {
+  filter: blur(20px) ;
+  height: 100px;
+  margin: -60px -10px -40px -10px;
+  overflow: visible;
+  background-color: #232499;
+  z-index: 100;
+}
+
