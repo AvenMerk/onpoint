@@ -10,6 +10,8 @@ class App extends Component {
         animationToTop: "animate-it-to-top",
         animationToRight: "animate-it-to-right",
         animationToRightX2: "animate-it-to-right-2",
+        animationToLeft: "animate-it-to-left",
+        animationToLeftX2: "animate-it-to-left-2",
         // bgArray: document.getElementById('container').children,
     };
 
@@ -24,6 +26,9 @@ class App extends Component {
     addAnimateBottomClass = () => {
         const bgArray = document.getElementById('container').children;
         for (let i = 0; i < bgArray.length; i++) {
+            if (bgArray[i].classList.contains(this.state.animationFromBottom)){
+                bgArray[i].classList.remove(this.state.animationFromBottom);
+            }
             bgArray[i].classList.add(this.state.animationBottom);
         }
     };
@@ -48,7 +53,40 @@ class App extends Component {
     addAnimateToRightClass = () => {
         const bgArray = document.getElementById('box3').children;
         for (let i = 0; i < bgArray.length; i++) {
-            bgArray[i].classList.add(this.state.animationToRight);
+            if (bgArray[i].classList.contains(this.state.animationToRight)){
+                bgArray[i].classList.add(this.state.animationToRightX2);
+                bgArray[i].classList.remove(this.state.animationToLeft);
+                bgArray[i].classList.remove(this.state.animationToLeftX2);
+            } else if (bgArray[i].classList.contains(this.state.animationToLeft)){
+                bgArray[i].classList.remove(this.state.animationToLeft);
+                bgArray[i].classList.remove(this.state.animationToLeftX2);
+                bgArray[i].classList.add(this.state.animationToRight);
+            } else {
+                bgArray[i].classList.add(this.state.animationToRight);
+                bgArray[i].classList.remove(this.state.animationToLeftX2);
+            }
+        }
+    };
+
+    addAnimateToLeftClass = () => {
+        const bgArray = document.getElementById('box3').children;
+        for (let i = 0; i < bgArray.length; i++) {
+            if (bgArray[i].classList.contains(this.state.animationToLeft)) {
+                bgArray[i].classList.add(this.state.animationToLeftX2);
+                bgArray[i].classList.remove(this.state.animationToRight);
+                bgArray[i].classList.remove(this.state.animationToRightX2);
+            } else if (bgArray[i].classList.contains(this.state.animationToRightX2)) {
+                bgArray[i].classList.remove(this.state.animationToRightX2);
+                bgArray[i].classList.add(this.state.animationToLeft);
+            } else if (bgArray[i].classList.contains(this.state.animationToRight)) {
+                bgArray[i].classList.remove(this.state.animationToRight);
+                bgArray[i].classList.add(this.state.animationToLeftX2);
+            } else if (!bgArray[i].classList.contains(this.state.animationToLeft)) {
+
+            } else {
+                    bgArray[i].classList.add(this.state.animationToLeft);
+                    bgArray[i].classList.remove(this.state.animationToRightX2);
+            }
         }
     };
 
@@ -59,15 +97,18 @@ class App extends Component {
                     <div className="background-1"/>
                 </Swipeable>
                 <div className="blur-1-2"/>
-                <Swipeable onSwipeUp={this.addAnimateBottomClass} onSwipeDown={this.addAnimateToTopClass}>
+                <Swipeable onSwipeUp={this.addAnimateBottomClass}
+                           onSwipeDown={this.addAnimateToTopClass}>
                     <div className="background-2"/>
                 </Swipeable>
                 <div className="blur-2-3"/>
-                <Swipeable onSwipeDown={this.addAnimateFromBottomClass} onSwipeRight={this.addAnimateToRightClass}>
+                <Swipeable onSwipeDown={this.addAnimateFromBottomClass}
+                           onSwipeLeft={this.addAnimateToRightClass}
+                           onSwipeRight={this.addAnimateToLeftClass}>
                     <div id="box3">
-                        <div className="background-3-3"/>
-                        <div className="background-3-2"/>
                         <div className="background-3-1"/>
+                        <div className="background-3-2"/>
+                        <div className="background-3-3"/>
                     </div>
                 </Swipeable>
             </div>
