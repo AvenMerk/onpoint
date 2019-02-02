@@ -4,10 +4,10 @@ import './App.css';
 
 class App extends Component {
     state = {
-        animationTop: "animate-it-top",
-        animationBottom: "animate-it-bottom",
-        animationFromBottom: "animate-it-from-bottom",
+        animationToBottom: "animate-it-to-bottom",
+        animationToBottomX2: "animate-it-to-bottom-2",
         animationToTop: "animate-it-to-top",
+        animationToTopX2: "animate-it-to-top-2",
         animationToRight: "animate-it-to-right",
         animationToRightX2: "animate-it-to-right-2",
         animationToLeft: "animate-it-to-left",
@@ -15,38 +15,39 @@ class App extends Component {
         // bgArray: document.getElementById('container').children,
     };
 
-    addAnimateTopClass = () => {
-        const bgArray = document.getElementById('container').children;
-        for (let i = 0; i < bgArray.length; i++) {
-            bgArray[i].classList.remove(this.state.animationToTop);
-            bgArray[i].classList.add(this.state.animationTop);
-        }
-    };
+    addAnimateToBottomClass = () => {
+        const bg = document.getElementById('bg');
 
-    addAnimateBottomClass = () => {
-        const bgArray = document.getElementById('container').children;
-        for (let i = 0; i < bgArray.length; i++) {
-            if (bgArray[i].classList.contains(this.state.animationFromBottom)){
-                bgArray[i].classList.remove(this.state.animationFromBottom);
-            }
-            bgArray[i].classList.add(this.state.animationBottom);
-        }
-    };
-
-    addAnimateFromBottomClass = () => {
-        const bgArray = document.getElementById('container').children;
-        for (let i = 0; i < bgArray.length; i++) {
-            bgArray[i].classList.add(this.state.animationFromBottom);
-            bgArray[i].classList.remove(this.state.animationBottom);
+        if (bg.classList.contains(this.state.animationToBottom)){
+            bg.classList.add(this.state.animationToBottomX2);
+            bg.classList.remove(this.state.animationToTop);
+            bg.classList.remove(this.state.animationToTopX2);
+        } else if (bg.classList.contains(this.state.animationToTop)){
+            bg.classList.remove(this.state.animationToTop);
+            bg.classList.remove(this.state.animationToTopX2);
+            bg.classList.add(this.state.animationToBottom);
+        } else {
+            bg.classList.add(this.state.animationToBottom);
+            bg.classList.remove(this.state.animationToTopX2);
         }
     };
 
     addAnimateToTopClass = () => {
-        const bgArray = document.getElementById('container').children;
-        for (let i = 0; i < bgArray.length; i++) {
-            bgArray[i].classList.add(this.state.animationToTop);
-            bgArray[i].classList.remove(this.state.animationTop);
-            bgArray[i].classList.remove(this.state.animationFromBottom);
+        const bg = document.getElementById('bg');
+
+        if (bg.classList.contains(this.state.animationToTop)) {
+            bg.classList.add(this.state.animationToTopX2);
+            bg.classList.remove(this.state.animationToTop);
+            bg.classList.remove(this.state.animationToBottom);
+            bg.classList.remove(this.state.animationToBottomX2);
+        } else if (bg.classList.contains(this.state.animationToBottomX2)) {
+            bg.classList.remove(this.state.animationToBottomX2);
+            bg.classList.add(this.state.animationToTop);
+        } else if (bg.classList.contains(this.state.animationToBottom)) {
+            bg.classList.remove(this.state.animationToBottom);
+            bg.classList.add(this.state.animationToTopX2);
+        } else if (!bg.classList.contains(this.state.animationToTop)) {
+
         }
     };
 
@@ -93,24 +94,29 @@ class App extends Component {
     render() {
         return (
             <div id="container">
-                <Swipeable onSwipeUp={this.addAnimateTopClass}>
-                    <div className="background-1"/>
-                </Swipeable>
-                <div className="blur-1-2"/>
-                <Swipeable onSwipeUp={this.addAnimateBottomClass}
-                           onSwipeDown={this.addAnimateToTopClass}>
-                    <div className="background-2"/>
-                </Swipeable>
-                <div className="blur-2-3"/>
-                <Swipeable onSwipeDown={this.addAnimateFromBottomClass}
+                <Swipeable onSwipeUp={this.addAnimateToBottomClass}
+                           onSwipeDown={this.addAnimateToTopClass}
                            onSwipeLeft={this.addAnimateToRightClass}
                            onSwipeRight={this.addAnimateToLeftClass}>
-                    <div id="box3">
-                        <div className="background-3-1"/>
-                        <div className="background-3-2"/>
-                        <div className="background-3-3"/>
+                    <div id='bg'>
+                        <div className="background-1"/>
+
+                        <div className="background-2"/>
+
+                        <div id="box3">
+                            <div className="background-3-1"/>
+                            <div className="background-3-2"/>
+                            <div className="background-3-3"/>
+                        </div>
                     </div>
+                    {/*<div className="background-1"/>*/}
                 </Swipeable>
+                {/*<Swipeable onSwipeUp={this.addAnimateBottomClass}*/}
+                           {/*onSwipeDown={this.addAnimateToTopClass}>*/}
+                {/*</Swipeable>*/}
+                {/*<Swipeable >*/}
+                    {/**/}
+                {/*</Swipeable>*/}
             </div>
         );
     }
