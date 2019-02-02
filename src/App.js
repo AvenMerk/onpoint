@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Swipeable } from 'react-touch';
+import { Swipeable, Draggable } from 'react-touch';
 import './App.css';
 
 class App extends Component {
@@ -135,18 +135,15 @@ class App extends Component {
                         <div className="background-2"/>
 
                         <div id="box3">
-                            <div className="background-3-1"/>
-                            <div className="background-3-2"/>
-                            <div className="background-3-3"/>
+                            <div className="background-3-1 animate-it-to-right animate-it-to-right-2"/>
+                            <div className="background-3-2 animate-it-to-right animate-it-to-right-2"/>
+                            <div className="background-3-3 animate-it-to-right animate-it-to-right-2"/>
+
                         </div>
+                        <div className="polygon-1" />
+                        <div className="toggle-line" />
                     </div>
                 </Swipeable>
-                {/*<Swipeable onSwipeUp={this.addAnimateBottomClass}*/}
-                {/*onSwipeDown={this.addAnimateToTopClass}>*/}
-                {/*</Swipeable>*/}
-                {/*<Swipeable >*/}
-                {/**/}
-                {/*</Swipeable>*/}
             </div>
         );
     }

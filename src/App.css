@@ -56,6 +56,31 @@
   background-image: url('/img/scheme3_3.png');
 }
 
+/*toggler*/
+
+.polygon-1 {
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    height: 56px;
+    width: 43px;
+    left: 174px;
+    bottom: 52px;
+    background: url('/img/polygon_1.png');
+}
+
+.toggle-line {
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    left: 195px;
+    bottom: 74px;
+    width: 640px;
+    height: 12px;
+    background-color: #d1eaff;
+    opacity: 0.3;
+}
+
 /*Pages*/
 #pages {
   overflow: hidden;
