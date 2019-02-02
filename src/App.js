@@ -99,7 +99,20 @@ class App extends Component {
                            onSwipeLeft={this.addAnimateToRightClass}
                            onSwipeRight={this.addAnimateToLeftClass}>
                     <div id='bg'>
-                        <div className="background-1"/>
+                        <div className="background-1">
+                            <div className="dot-settings dot1-1 dot1-animation"/>
+                            <div className="dot-settings dot1-2 dot2-animation"/>
+                            <div className="dot-settings dot1-3"/>
+                            <div className="dot-settings dot2-1 dot1-animation"/>
+                            <div className="dot-settings dot2-2 dot2-animation"/>
+                            <div className="dot-settings dot2-3"/>
+                            <div className="dot-settings dot3-1 dot1-animation"/>
+                            <div className="dot-settings dot3-2 dot2-animation"/>
+                            <div className="dot-settings dot3-3"/>
+                            <div className="dot-settings dot4-1 dot1-animation"/>
+                            <div className="dot-settings dot4-2 dot2-animation"/>
+                            <div className="dot-settings dot4-3"/>
+                        </div>
 
                         <div className="background-2"/>
 
@@ -109,13 +122,12 @@ class App extends Component {
                             <div className="background-3-3"/>
                         </div>
                     </div>
-                    {/*<div className="background-1"/>*/}
                 </Swipeable>
                 {/*<Swipeable onSwipeUp={this.addAnimateBottomClass}*/}
-                           {/*onSwipeDown={this.addAnimateToTopClass}>*/}
+                {/*onSwipeDown={this.addAnimateToTopClass}>*/}
                 {/*</Swipeable>*/}
                 {/*<Swipeable >*/}
-                    {/**/}
+                {/**/}
                 {/*</Swipeable>*/}
             </div>
         );

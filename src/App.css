@@ -7,7 +7,6 @@
 #box3 {
   overflow: hidden;
   white-space: nowrap;
-  /*background: url("/img/bg3.png");*/
 }
 
 #bg {
@@ -19,8 +18,11 @@
 }
 
 .background-1 {
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
   height: 100vh;
-  background: url('/img/ice2.png');
+  /*background: url('/img/dot1_1.png');*/
 }
 
 .background-2 {
@@ -54,8 +56,153 @@
   background-image: url('/img/scheme3_3.png');
 }
 
+/*Dot positioning*/
 
-/*animation for first 3 slides*/
+.dot-settings {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  background-image: radial-gradient(#de791b, #cf1437);
+  border-radius: 50%;
+}
+
+.dot1-1 {
+  top: 279px;
+  left: 579px;
+  width: 16px;
+  height: 16px;
+  opacity: 0.62;
+}
+
+.dot1-2 {
+  top: 267px;
+  left: 567px;
+  width: 40px;
+  height: 40px;
+  opacity: 0.22;
+}
+
+.dot1-3 {
+  top: 261px;
+  left: 561px;
+  width: 52px;
+  height: 52px;
+  opacity: 0.22;
+}
+
+.dot2-1 {
+  top: 435px;
+  left: 283px;
+  width: 10px;
+  height: 10px;
+  opacity: 0.62;
+}
+
+.dot2-2 {
+  top: 430px;
+  left: 278px;
+  width: 20px;
+  height: 20px;
+  opacity: 0.22;
+}
+
+.dot2-3 {
+  top: 427px;
+  left: 275px;
+  width: 26px;
+  height: 26px;
+  opacity: 0.22;
+}
+
+.dot3-1 {
+  top: 524px;
+  left: 827px;
+  width: 6px;
+  height: 6px;
+  opacity: 0.62;
+}
+
+.dot3-2 {
+  top: 522px;
+  left: 825px;
+  width: 10px;
+  height: 10px;
+  opacity: 0.22;
+}
+
+.dot3-3 {
+  top: 519px;
+  left: 822px;
+  width: 16px;
+  height: 16px;
+  opacity: 0.22;
+}
+
+.dot4-1 {
+  top: 543px;
+  left: 484px;
+  width: 6px;
+  height: 6px;
+  opacity: 0.62;
+}
+
+.dot4-2 {
+  top: 541px;
+  left: 482px;
+  width: 10px;
+  height: 10px;
+  opacity: 0.22;
+}
+
+.dot4-3 {
+  top: 538px;
+  left: 479px;
+  width: 16px;
+  height: 16px;
+  opacity: 0.22;
+}
+
+/*Dot animation*/
+
+.dot1-animation {
+  animation-name: pulse1;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate
+}
+
+.dot2-animation {
+  animation-name: pulse2;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate
+}
+
+.dot2-animation {
+  animation-name: pulse3;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate
+}
+
+@keyframes pulse1 {
+  from  {transform: scale(1);}
+  to {transform: scale(2.5);}
+}
+
+@keyframes pulse2 {
+  from  {transform: scale(1);}
+  to {transform: scale(1.5);}
+}
+
+@keyframes pulse3 {
+  from  {transform: scale(1);}
+  to {transform: scale(1.2);}
+}
+/*animation for swipe*/
 
 .animate-it-to-bottom {
   animation-name: to-bottom;
