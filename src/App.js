@@ -22,13 +22,19 @@ class App extends Component {
             bg.classList.add(this.state.animationToBottomX2);
             bg.classList.remove(this.state.animationToTop);
             bg.classList.remove(this.state.animationToTopX2);
+            document.getElementsByClassName('page')[2].classList.add('active-page');
+            document.getElementsByClassName('page')[1].classList.remove('active-page');
         } else if (bg.classList.contains(this.state.animationToTop)){
             bg.classList.remove(this.state.animationToTop);
             bg.classList.remove(this.state.animationToTopX2);
             bg.classList.add(this.state.animationToBottom);
+            document.getElementsByClassName('page')[1].classList.add('active-page');
+            document.getElementsByClassName('page')[0].classList.remove('active-page');
         } else {
             bg.classList.add(this.state.animationToBottom);
             bg.classList.remove(this.state.animationToTopX2);
+            document.getElementsByClassName('page')[1].classList.add('active-page');
+            document.getElementsByClassName('page')[0].classList.remove('active-page');
         }
     };
 
@@ -40,12 +46,18 @@ class App extends Component {
             bg.classList.remove(this.state.animationToTop);
             bg.classList.remove(this.state.animationToBottom);
             bg.classList.remove(this.state.animationToBottomX2);
+            document.getElementsByClassName('page')[0].classList.add('active-page');
+            document.getElementsByClassName('page')[1].classList.remove('active-page');
         } else if (bg.classList.contains(this.state.animationToBottomX2)) {
             bg.classList.remove(this.state.animationToBottomX2);
             bg.classList.add(this.state.animationToTop);
+            document.getElementsByClassName('page')[1].classList.add('active-page');
+            document.getElementsByClassName('page')[2].classList.remove('active-page');
         } else if (bg.classList.contains(this.state.animationToBottom)) {
             bg.classList.remove(this.state.animationToBottom);
             bg.classList.add(this.state.animationToTopX2);
+            document.getElementsByClassName('page')[0].classList.add('active-page');
+            document.getElementsByClassName('page')[1].classList.remove('active-page');
         } else if (!bg.classList.contains(this.state.animationToTop)) {
 
         }
@@ -112,6 +124,12 @@ class App extends Component {
                             <div className="dot-settings dot4-1 dot1-animation"/>
                             <div className="dot-settings dot4-2 dot2-animation"/>
                             <div className="dot-settings dot4-3"/>
+                        </div>
+
+                        <div id="pages">
+                            <div className="page active-page" />
+                            <div className="page" />
+                            <div className="page" />
                         </div>
 
                         <div className="background-2"/>

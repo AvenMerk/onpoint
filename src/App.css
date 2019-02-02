@@ -56,6 +56,31 @@
   background-image: url('/img/scheme3_3.png');
 }
 
+/*Pages*/
+#pages {
+  overflow: hidden;
+  position: fixed;
+  white-space: nowrap;
+  width: 14px;
+  height: 85px;
+  top: 343px;
+  right: 27px;
+}
+
+.page {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  margin-top: 9px;
+  margin-bottom: 9px;
+}
+
+.active-page {
+  background-color: #f78b1f;
+}
+/**/
+
 /*Dot positioning*/
 
 .dot-settings {
