@@ -60,29 +60,33 @@
 .animate-it-to-bottom {
   animation-name: to-bottom;
   position: relative;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-fill-mode: forwards;
+  animation-timing-function: ease;
 }
 
 .animate-it-to-bottom-2 {
   animation-name: to-bottom-2;
   position: relative;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-fill-mode: forwards;
+  animation-timing-function: ease;
 }
 
 .animate-it-to-right {
   animation-name: to-right;
   position: relative;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-fill-mode: forwards;
+  animation-timing-function: ease;
 }
 
 .animate-it-to-right-2 {
   animation-name: to-right-2;
   position: relative;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-fill-mode: forwards;
+  animation-timing-function: ease;
 }
 
 @keyframes to-bottom {
@@ -111,29 +115,33 @@
 .animate-it-to-top-2 {
   animation-name: to-top-2;
   position: relative;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-fill-mode: forwards;
+  animation-timing-function: ease;
 }
 
 .animate-it-to-top {
   animation-name: to-top;
   position: relative;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-fill-mode: forwards;
+  animation-timing-function: ease;
 }
 
 .animate-it-to-left {
-    animation-name: to-left;
-    position: relative;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
+  animation-name: to-left;
+  position: relative;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
 }
 
 .animate-it-to-left-2 {
-    animation-name: to-left-2;
-    position: relative;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
+  animation-name: to-left-2;
+  position: relative;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
 }
 
 @keyframes to-top-2 {
