@@ -8,6 +8,7 @@ class Toggler extends Component {
         posMax: 814,
         posCurrent: 174,
         linePosStart: -640,
+        linePosCurrent: -640,
         animationToRight: "animate-it-to-right",
         animationToRightX2: "animate-it-to-right-2",
         animationToLeft: "animate-it-to-left",
@@ -17,7 +18,7 @@ class Toggler extends Component {
     movePolygon = (e) => {
         e.preventDefault();
         console.log('movePolygon');
-        const newPosition = e.changedTouches[0].clientX.toFixed(0);
+        const newPosition = e.changedTouches[0].clientX.toFixed(0) - 20;
         const polygon = document.getElementById('polygon-1');
         const line = document.getElementById('active-line');
 
@@ -50,115 +51,61 @@ class Toggler extends Component {
         let linePos = this.state.linePosCurrent;
         const polygon = document.getElementById("polygon-1");
         const line = document.getElementById("active-line");
+        const style = document.documentElement.style;
 
+//get to middle from left
         if (pos >= (this.state.posMiddle - 160) && pos <= this.state.posMiddle) {
-            while (pos < this.state.posMiddle) {
-                pos++;
-                linePos++;
-                polygon.style.left = `${pos}px`;
-                line.style.left = `${linePos}px`;
-                this.setState( {posCurrent: pos, linePosCurrent: linePos});
-            }
-        } else if (pos >= (this.state.posMax - 160)) {
-            while (pos < this.state.posMax) {
-                pos++;
-                linePos++;
-                polygon.style.left = `${pos}px`;
-                line.style.left = `${linePos}px`;
-                this.setState( {posCurrent: pos, linePosCurrent: linePos});
+            style.setProperty('--lineCurrent', `${linePos}px`);
+            style.setProperty('--lineCloser', `-320px`);
+            style.setProperty('--posCurrent', `${pos}px`);
+            style.setProperty('--posCloser', `${this.state.posMiddle}px`);
 
-            }
+            polygon.classList.add('closer-pos');
+            line.classList.add('closer-line');
+            this.setState( {posCurrent: this.state.posMiddle, linePosCurrent: -320});
+
+            //get to max
+        } else if (pos >= (this.state.posMax - 160)) {
+            style.setProperty('--lineCurrent', `${linePos}px`);
+            style.setProperty('--lineCloser', `0`);
+            style.setProperty('--posCurrent', `${pos}px`);
+            style.setProperty('--posCloser', `${this.state.posMax}px`);
+
+            polygon.classList.add('closer-pos');
+            line.classList.add('closer-line');
+            this.setState( {posCurrent: this.state.posMax, linePosCurrent: 0});
+
+            //get to min
         } else if (pos < (this.state.posMin + 160)) {
-            while (pos > this.state.posMin) {
-                pos--;
-                linePos--;
-                polygon.style.left = `${pos}px`;
-                line.style.left = `${linePos}px`;
-                this.setState( {posCurrent: pos, linePosCurrent: linePos});
-            }
+            style.setProperty('--lineCurrent', `${linePos}px`);
+            style.setProperty('--lineCloser', `${this.state.linePosStart}px`);
+            style.setProperty('--posCurrent', `${pos}px`);
+            style.setProperty('--posCloser', `${this.state.posMin}px`);
+
+            polygon.classList.add('closer-pos');
+            line.classList.add('closer-line');
+            this.setState( {posCurrent: this.state.posMin, linePosCurrent: this.state.linePosStart});
+
+            //get to middle from right
         } else if (pos < (this.state.posMiddle + 160) && pos > this.state.posMiddle) {
-            while (pos > this.state.posMiddle) {
-                pos--;
-                linePos--;
-                polygon.style.left = `${pos}px`;
-                line.style.left = `${linePos}px`;
-                this.setState( {posCurrent: pos, linePosCurrent: linePos});
-            }
+            style.setProperty('--lineCurrent', `${linePos}px`);
+            style.setProperty('--lineCloser', `-320px`);
+            style.setProperty('--posCurrent', `${pos}px`);
+            style.setProperty('--posCloser', `${this.state.posMiddle}px`);
+
+            polygon.classList.add('closer-pos');
+            line.classList.add('closer-line');
+            this.setState( {posCurrent: this.state.posMiddle, linePosCurrent: -320});
         }
-        // if ((pos >= (this.state.posMiddle - 160)) && (pos <= (this.state.posMiddle + 160))) {
-        //     polygon.animate([
-        //         // keyframes
-        //         {left: `${pos}px`},
-        //         {left: `${this.state.posMiddle}px`}
-        //     ], {
-        //         // timing options
-        //         duration: 1000,
-        //         iterations: 1,
-        //         fill: "forwards"
-        //     });
-        //     line.animate([
-        //         // keyframes
-        //         {left: `${this.state.linePosCurrent}px`},
-        //         {left: `${this.state.linePosStart + this.state.posMiddle-this.state.posMin}px`}
-        //     ], {
-        //         // timing options
-        //         duration: 1000,
-        //         iterations: 1,
-        //         fill: "forwards"
-        //     });
-        //     this.setState({posCurrent: this.state.posMiddle});
-        //     this.setState({linePosCurrent: this.state.linePosStart + this.state.posMiddle-this.state.posMin});
-        // } else if (pos < (this.state.posMin + 160)) {
-        //     polygon.animate([
-        //         // keyframes
-        //         {left: `${pos}px`},
-        //         {left: `${this.state.posMin}px`}
-        //     ], {
-        //         // timing options
-        //         duration: 1000,
-        //         iterations: 1,
-        //         fill: "forwards"
-        //     });
-        //     line.animate([
-        //         // keyframes
-        //         {left: `${this.state.linePosCurrent}px`},
-        //         {left: `${this.state.linePosStart}px`}
-        //     ], {
-        //         // timing options
-        //         duration: 1000,
-        //         iterations: 1,
-        //         fill: "forwards"
-        //     });
-        //     this.setState({posCurrent: this.state.posMin});
-        //     this.setState({linePosCurrent: 0});
-        // } else {
-        //     polygon.animate([
-        //         // keyframes
-        //         {left: `${pos}px`},
-        //         {left: `${this.state.posMax}px`}
-        //     ], {
-        //         // timing options
-        //         duration: 1000,
-        //         iterations: 1,
-        //         fill: "forwards"
-        //     });
-        //     line.animate([
-        //         // keyframes
-        //         {left: `${this.state.linePosCurrent}px`},
-        //         {left: `0px`}
-        //     ], {
-        //         // timing options
-        //         duration: 1000,
-        //         iterations: 1,
-        //         fill: "forwards"
-        //     });
-        //     this.setState({posCurrent: this.state.posMax});
-        //     this.setState({linePosCurrent: 0});
-        // }
-        // setTimeout(() => (polygon.style.left = `${this.state.posCurrent}px`), 1000);
-        // setTimeout(() => (line.style.left = `${this.state.linePosCurrent}px`), 1000);
-        // polygon.addEventListener("webkitAnimationEnd",(() => {console.log('set');
-        // polygon.style.left = `${this.state.posCurrent}px`}));
+        polygon.addEventListener("webkitAnimationEnd",
+            ( () => {
+                console.log('set');
+                polygon.style.left = `${this.state.posCurrent}px`;
+                line.style.left = `${this.state.linePosCurrent}px`;
+                polygon.classList.remove('closer-pos');
+                line.classList.remove('closer-line');
+            }
+            ));
     };
 
     addAnimateToRightClass = (position) => {

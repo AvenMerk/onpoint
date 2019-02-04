@@ -1,3 +1,10 @@
+:root {
+  --lineCurrent: -640px;
+  --lineCloser: -320px;
+  --posCurrent: 174px;
+  --posCloser: 814px;
+}
+
 #container {
   max-height: 100vh;
   overflow: hidden;
@@ -63,12 +70,12 @@
     position: absolute;
     display: inline-block;
     overflow: hidden;
-    height: 56px;
-    width: 43px;
+    height: 76px;
+    width: 63px;
     left: 174px;
-    bottom: 52px;
+    bottom: 32px;
     background: url('/img/polygon_1.png') no-repeat;
-    padding: 10px;
+    /*padding: 20px;*/
 }
 
 .toggle-line {
@@ -272,6 +279,7 @@
   from  {transform: scale(1);}
   to {transform: scale(1.2);}
 }
+
 /*animation for swipe*/
 
 .animate-it-to-bottom {
@@ -379,4 +387,32 @@
     0%   {left: -100vw}
     100% {left: -0}
 }
-/**/
+
+/*animation for closer*/
+
+.closer-line {
+  animation-name: closer-line;
+  position: absolute;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+
+}
+
+.closer-pos {
+  animation-name: closer-pos;
+  position: absolute;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+@keyframes closer-line {
+  0% {left: var(--lineCurrent)}
+  100% {left: var(--lineCloser)}
+}
+
+@keyframes closer-pos{
+  0% {left: var(--posCurrent)}
+  100% {left: var(--posCloser)}
+}
