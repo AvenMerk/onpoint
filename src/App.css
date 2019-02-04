@@ -67,8 +67,8 @@
     width: 43px;
     left: 174px;
     bottom: 52px;
-    background: url('/img/polygon_1.png');
-    touch-action: none;
+    background: url('/img/polygon_1.png') no-repeat;
+    padding: 10px;
 }
 
 .toggle-line {

@@ -91,9 +91,9 @@ class App extends Component {
                         <div className="background-2"/>
 
                         <div id="box3">
-                            <div className="background-3-1 animate-it-to-right animate-it-to-right-2"/>
-                            <div className="background-3-2 animate-it-to-right animate-it-to-right-2"/>
-                            <div className="background-3-3 animate-it-to-right animate-it-to-right-2"/>
+                            <div className="background-3-1"/>
+                            <div className="background-3-2"/>
+                            <div className="background-3-3"/>
 
                         </div>
                         <Toggler />
