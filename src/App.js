@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Swipeable, Draggable } from 'react-touch';
+import { Swipeable } from 'react-touch';
 import './App.css';
+import Toggler from './components/toggler'
 
 class App extends Component {
     state = {
@@ -12,6 +13,7 @@ class App extends Component {
         animationToRightX2: "animate-it-to-right-2",
         animationToLeft: "animate-it-to-left",
         animationToLeftX2: "animate-it-to-left-2",
+
         // bgArray: document.getElementById('container').children,
     };
 
@@ -140,8 +142,7 @@ class App extends Component {
                             <div className="background-3-3 animate-it-to-right animate-it-to-right-2"/>
 
                         </div>
-                        <div className="polygon-1" />
-                        <div className="toggle-line" />
+                        <Toggler />
                     </div>
                 </Swipeable>
             </div>

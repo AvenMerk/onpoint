@@ -2,6 +2,7 @@
   max-height: 100vh;
   overflow: hidden;
   white-space: nowrap;
+  touch-action: none;
 }
 
 #box3 {
@@ -58,7 +59,7 @@
 
 /*toggler*/
 
-.polygon-1 {
+#polygon-1 {
     position: absolute;
     display: inline-block;
     overflow: hidden;
@@ -67,6 +68,7 @@
     left: 174px;
     bottom: 52px;
     background: url('/img/polygon_1.png');
+    touch-action: none;
 }
 
 .toggle-line {
@@ -77,8 +79,26 @@
     bottom: 74px;
     width: 640px;
     height: 12px;
-    background-color: #d1eaff;
-    opacity: 0.3;
+    touch-action: none;
+}
+
+#active-line {
+  position: absolute;
+  display: inline-block;
+  background-color: #d1eaff;
+  width: 640px;
+  height: 12px;
+  left: -640px;
+  z-index: 100;
+  touch-action: none;
+}
+
+#passive-line {
+  display: inline-block;
+  background-color: #d1eaff;
+  opacity: 0.3;
+  width: 640px;
+  height: 12px;
 }
 
 /*Pages*/
