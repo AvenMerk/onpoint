@@ -9,10 +9,6 @@ class App extends Component {
         animationToBottomX2: "animate-it-to-bottom-2",
         animationToTop: "animate-it-to-top",
         animationToTopX2: "animate-it-to-top-2",
-        animationToRight: "animate-it-to-right",
-        animationToRightX2: "animate-it-to-right-2",
-        animationToLeft: "animate-it-to-left",
-        animationToLeftX2: "animate-it-to-left-2",
 
         // bgArray: document.getElementById('container').children,
     };
@@ -65,53 +61,11 @@ class App extends Component {
         }
     };
 
-    addAnimateToRightClass = () => {
-        const bgArray = document.getElementById('box3').children;
-        for (let i = 0; i < bgArray.length; i++) {
-            if (bgArray[i].classList.contains(this.state.animationToRight)){
-                bgArray[i].classList.add(this.state.animationToRightX2);
-                bgArray[i].classList.remove(this.state.animationToLeft);
-                bgArray[i].classList.remove(this.state.animationToLeftX2);
-            } else if (bgArray[i].classList.contains(this.state.animationToLeft)){
-                bgArray[i].classList.remove(this.state.animationToLeft);
-                bgArray[i].classList.remove(this.state.animationToLeftX2);
-                bgArray[i].classList.add(this.state.animationToRight);
-            } else {
-                bgArray[i].classList.add(this.state.animationToRight);
-                bgArray[i].classList.remove(this.state.animationToLeftX2);
-            }
-        }
-    };
-
-    addAnimateToLeftClass = () => {
-        const bgArray = document.getElementById('box3').children;
-        for (let i = 0; i < bgArray.length; i++) {
-            if (bgArray[i].classList.contains(this.state.animationToLeft)) {
-                bgArray[i].classList.add(this.state.animationToLeftX2);
-                bgArray[i].classList.remove(this.state.animationToRight);
-                bgArray[i].classList.remove(this.state.animationToRightX2);
-            } else if (bgArray[i].classList.contains(this.state.animationToRightX2)) {
-                bgArray[i].classList.remove(this.state.animationToRightX2);
-                bgArray[i].classList.add(this.state.animationToLeft);
-            } else if (bgArray[i].classList.contains(this.state.animationToRight)) {
-                bgArray[i].classList.remove(this.state.animationToRight);
-                bgArray[i].classList.add(this.state.animationToLeftX2);
-            } else if (!bgArray[i].classList.contains(this.state.animationToLeft)) {
-
-            } else {
-                    bgArray[i].classList.add(this.state.animationToLeft);
-                    bgArray[i].classList.remove(this.state.animationToRightX2);
-            }
-        }
-    };
-
     render() {
         return (
             <div id="container">
                 <Swipeable onSwipeUp={this.addAnimateToBottomClass}
-                           onSwipeDown={this.addAnimateToTopClass}
-                           onSwipeLeft={this.addAnimateToRightClass}
-                           onSwipeRight={this.addAnimateToLeftClass}>
+                           onSwipeDown={this.addAnimateToTopClass}>
                     <div id='bg'>
                         <div className="background-1">
                             <div className="dot-settings dot1-1 dot1-animation"/>
