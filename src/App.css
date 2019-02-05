@@ -41,27 +41,142 @@
 }
 
 .background-3-1 {
-  display: inline-block;
-  height: 100vh;
-  width: 100vw;
-  left: -200vw;
-  background-image: url('/img/scheme3_1.png');
+    overflow: hidden;
+    /*position: relative;*/
+    white-space: nowrap;
+    display: inline-block;
+    height: 100vh;
+    width: 100vw;
+    left: -200vw;
+    background-image: url('/img/scheme3_1.png');
 }
 
 .background-3-2 {
-  display: inline-block;
-  height: 100vh;
-  width: 100vw;
-  left: -100vw;
-  background-image: url('/img/scheme3_2.png');
+    overflow: hidden;
+    /*position: relative;*/
+    white-space: nowrap;
+    display: inline-block;
+    height: 100vh;
+    width: 100vw;
+    left: -100vw;
+    background-image: url('/img/scheme3_2.png');
 }
 
 .background-3-3 {
-  display: inline-block;
-  height: 100vh;
-  width: 100vw;
-  left: 0;
-  background-image: url('/img/scheme3_3.png');
+    overflow: hidden;
+    /*position: relative;*/
+    white-space: nowrap;
+    display: inline-block;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    background-image: url('/img/scheme3_3.png');
+}
+
+.ice-3-1 {
+     display: inline-block;
+     height: 100vh;
+     width: 100vw;
+     left: 0;
+     background-image: url('/img/ice3_1.png');
+ }
+
+.ice-3-2 {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    background-image: url('/img/ice3_2.png');
+}
+
+.ice-3-3 {
+    display: inline-block;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    background-image: url('/img/ice3_3.png');
+}
+
+.ice-3-2-bottom {
+    display: inline-block;
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 414px;
+    width: 408px;
+    top: 65vh;
+    left: 72vw;
+    background-image: url('/img/ice_bottom_3_2.png');
+}
+
+.ice-3-3-bottom {
+    height: 496px;
+    width: 489px;
+    display: block;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: rotate(-23deg);
+    top: -10vh;
+    left: -10vw;
+    filter: blur(3px);
+}
+
+.ice-3-3-bottom::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    background: url('/img/ice_max.png') no-repeat;
+    z-index: -1;
+}
+
+.ice-3-3-right {
+    height: 372px;
+    width: 367px;
+    display: block;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: rotate(65deg);
+    top: -10vh;
+    right: -70vw;
+}
+
+.ice-3-3-right::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background: url('/img/ice_med.png') no-repeat;
+    z-index: -1;
+}
+
+.ice-3-3-top {
+    height: 141px;
+    width: 139px;
+    display: block;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: rotate(-30deg);
+    top: 10vh;
+    left: -6vw;
+}
+
+.ice-3-3-top::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background: url('/img/ice_top_3_3.png') no-repeat;
+    z-index: -1;
 }
 
 /*toggler*/

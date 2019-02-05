@@ -95,9 +95,19 @@ class App extends Component {
                         <div className="background-2"/>
 
                         <div id="box3">
-                            <div className="background-3-1"/>
-                            <div className="background-3-2"/>
-                            <div className="background-3-3"/>
+                            <div className="background-3-1">
+                                <div className="ice-3-1" />
+                            </div>
+                            <div className="background-3-2">
+                                <div className="ice-3-2" />
+                                {/*<div className="ice-3-2-bottom" />*/}
+                            </div>
+                            <div className="background-3-3">
+                                {/*<div className="ice-3-3" />*/}
+                                <div className="ice-3-3-top" />
+                                <div className="ice-3-3-right" />
+                                <div className="ice-3-3-bottom" />
+                            </div>
 
                         </div>
                         <Toggler />
