@@ -99,7 +99,6 @@ class Toggler extends Component {
         }
         polygon.addEventListener("webkitAnimationEnd",
             ( () => {
-                console.log('set');
                 polygon.style.left = `${this.state.posCurrent}px`;
                 line.style.left = `${this.state.linePosCurrent}px`;
                 polygon.classList.remove('closer-pos');
