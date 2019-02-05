@@ -30,19 +30,16 @@
   position: relative;
   white-space: nowrap;
   height: 100vh;
-  /*background: url('/img/dot1_1.png');*/
 }
 
 .background-2 {
   display: block;
   width: 100vw;
   height: 100vh;
-  /*background: url('/img/ice2.png');*/
 }
 
 .background-3-1 {
     overflow: hidden;
-    /*position: relative;*/
     white-space: nowrap;
     display: inline-block;
     height: 100vh;
@@ -332,6 +329,7 @@
 }
 
 /*Pages*/
+
 #pages {
   overflow: hidden;
   position: fixed;
@@ -354,7 +352,6 @@
 .active-page {
   background-color: #f78b1f;
 }
-/**/
 
 /*Dot positioning*/
 
