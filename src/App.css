@@ -53,7 +53,6 @@
 
 .background-3-2 {
     overflow: hidden;
-    /*position: relative;*/
     white-space: nowrap;
     display: inline-block;
     height: 100vh;
@@ -64,7 +63,6 @@
 
 .background-3-3 {
     overflow: hidden;
-    /*position: relative;*/
     white-space: nowrap;
     display: inline-block;
     height: 100vh;
@@ -73,52 +71,139 @@
     background-image: url('/img/scheme3_3.png');
 }
 
-.ice-3-1 {
-     display: inline-block;
-     height: 100vh;
-     width: 100vw;
-     left: 0;
-     background-image: url('/img/ice3_1.png');
- }
+/*Ice settings*/
 
-.ice-3-2 {
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-    white-space: nowrap;
-    height: 100vh;
-    width: 100vw;
-    left: 0;
-    background-image: url('/img/ice3_2.png');
-}
-
-.ice-3-3 {
-    display: inline-block;
-    height: 100vh;
-    width: 100vw;
-    left: 0;
-    background-image: url('/img/ice3_3.png');
-}
-
-.ice-3-2-bottom {
-    display: inline-block;
-    position: absolute;
-    white-space: nowrap;
-    overflow: hidden;
-    height: 414px;
-    width: 408px;
-    top: 65vh;
-    left: 72vw;
-    background-image: url('/img/ice_bottom_3_2.png');
-}
-
-.ice-3-3-bottom {
-    height: 496px;
-    width: 489px;
+.ice-min {
     display: block;
     position: relative;
     white-space: nowrap;
     overflow: hidden;
+    height: 141px;
+    width: 139px;
+}
+
+.ice-med {
+    display: block;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 372px;
+    width: 367px;
+}
+
+.ice-max {
+    display: block;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 496px;
+    width: 489px;
+}
+
+/*Ice at 3_1*/
+
+.ice-3-1-bottom {
+    top: -20vh;
+    left: -25vw;
+    filter: blur(3px);
+}
+
+.ice-3-1-bottom::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    background: url('/img/ice_max.png') no-repeat;
+    z-index: -1;
+}
+
+.ice-3-1-right {
+    transform: rotate(65deg);
+    top: -10vh;
+    right: -50vw;
+}
+
+.ice-3-1-right::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background: url('/img/ice_med.png') no-repeat;
+    z-index: -1;
+}
+
+.ice-3-1-top {
+    transform: rotate(-30deg);
+    top: 10vh;
+    left: 80vw;
+}
+
+.ice-3-1-top::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background: url('/img/ice_min.png') no-repeat;
+    z-index: -1;
+}
+
+/*Ice at 3_2*/
+
+
+.ice-3-1-bottom {
+    top: -20vh;
+    left: -25vw;
+    filter: blur(3px);
+}
+
+.ice-3-1-bottom::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    background: url('/img/ice_max.png') no-repeat;
+    z-index: -1;
+}
+
+.ice-3-1-right {
+    transform: rotate(65deg);
+    top: -10vh;
+    right: -50vw;
+}
+
+.ice-3-1-right::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background: url('/img/ice_med.png') no-repeat;
+    z-index: -1;
+}
+
+.ice-3-1-top {
+    transform: rotate(-30deg);
+    top: 10vh;
+    left: 80vw;
+}
+
+.ice-3-1-top::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background: url('/img/ice_min.png') no-repeat;
+    z-index: -1;
+}
+
+/*Ice at 3_3*/
+
+.ice-3-3-bottom {
     transform: rotate(-23deg);
     top: -10vh;
     left: -10vw;
@@ -136,12 +221,6 @@
 }
 
 .ice-3-3-right {
-    height: 372px;
-    width: 367px;
-    display: block;
-    position: relative;
-    white-space: nowrap;
-    overflow: hidden;
     transform: rotate(65deg);
     top: -10vh;
     right: -70vw;
@@ -158,12 +237,6 @@
 }
 
 .ice-3-3-top {
-    height: 141px;
-    width: 139px;
-    display: block;
-    position: relative;
-    white-space: nowrap;
-    overflow: hidden;
     transform: rotate(-30deg);
     top: 10vh;
     left: -6vw;
@@ -175,7 +248,7 @@
     width: 100%;
     height: 100%;
     opacity: 0.3;
-    background: url('/img/ice_top_3_3.png') no-repeat;
+    background: url('/img/ice_min.png') no-repeat;
     z-index: -1;
 }
 
