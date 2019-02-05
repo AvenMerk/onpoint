@@ -34,10 +34,10 @@
 }
 
 .background-2 {
-  display: inline-block;
+  display: block;
   width: 100vw;
   height: 100vh;
-  background: url('/img/ice2.png');
+  /*background: url('/img/ice2.png');*/
 }
 
 .background-3-1 {
@@ -100,6 +100,39 @@
     width: 489px;
 }
 
+/*Ice at 2*/
+
+.ice-top-1 {
+    top: 20vh;
+    left: 3vw;
+    background: url('/img/ice_min.png') no-repeat;
+    filter: blur(1px);
+}
+
+.ice-top-2 {
+    top: -35vh;
+    right: -55vw;
+    filter: blur(3px);
+    background: url('/img/ice_max.png') no-repeat;
+
+}
+
+.ice-bottom-1 {
+    transform: rotate(40deg);
+    top: -40vh;
+    left: 10vw;
+    background: url('/img/ice_med.png') no-repeat;
+
+}
+
+.ice-bottom-2 {
+    transform: rotate(-30deg);
+    top: -60vh;
+    left: 65vw;
+    background: url('/img/ice_min.png') no-repeat;
+    filter: blur(6px);
+}
+
 /*Ice at 3_1*/
 
 .ice-3-1-bottom {
@@ -153,29 +186,30 @@
 /*Ice at 3_2*/
 
 
-.ice-3-1-bottom {
+.ice-3-2-bottom {
     top: -20vh;
-    left: -25vw;
-    filter: blur(3px);
+    right: -50vw;
+    filter: blur(5px);
 }
 
-.ice-3-1-bottom::after {
+.ice-3-2-bottom::after {
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: 1;
+    opacity: 0.8;
     background: url('/img/ice_max.png') no-repeat;
     z-index: -1;
 }
 
-.ice-3-1-right {
+.ice-3-2-left {
     transform: rotate(65deg);
-    top: -10vh;
-    right: -50vw;
+    top: 0;
+    left: -15vw;
+    filter: blur(1px);
 }
 
-.ice-3-1-right::after {
+.ice-3-2-left::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -185,13 +219,13 @@
     z-index: -1;
 }
 
-.ice-3-1-top {
+.ice-3-2-top {
     transform: rotate(-30deg);
-    top: 10vh;
-    left: 80vw;
+    top: 5vh;
+    left: 50vw;
 }
 
-.ice-3-1-top::after {
+.ice-3-2-top::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -206,7 +240,7 @@
 .ice-3-3-bottom {
     transform: rotate(-23deg);
     top: -10vh;
-    left: -10vw;
+    left: -20vw;
     filter: blur(3px);
 }
 
@@ -222,8 +256,9 @@
 
 .ice-3-3-right {
     transform: rotate(65deg);
-    top: -10vh;
-    right: -70vw;
+    top: -20vh;
+    right: -75vw;
+    filter: blur(1px);
 }
 
 .ice-3-3-right::after {
