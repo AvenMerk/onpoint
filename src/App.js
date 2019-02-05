@@ -68,18 +68,22 @@ class App extends Component {
                            onSwipeDown={this.addAnimateToTopClass}>
                     <div id='bg'>
                         <div className="background-1">
-                            <div className="dot-settings dot1-1 dot1-animation"/>
-                            <div className="dot-settings dot1-2 dot2-animation"/>
-                            <div className="dot-settings dot1-3"/>
-                            <div className="dot-settings dot2-1 dot1-animation"/>
-                            <div className="dot-settings dot2-2 dot2-animation"/>
-                            <div className="dot-settings dot2-3"/>
-                            <div className="dot-settings dot3-1 dot1-animation"/>
-                            <div className="dot-settings dot3-2 dot2-animation"/>
-                            <div className="dot-settings dot3-3"/>
-                            <div className="dot-settings dot4-1 dot1-animation"/>
-                            <div className="dot-settings dot4-2 dot2-animation"/>
-                            <div className="dot-settings dot4-3"/>
+                            <div className="dot-settings dot1 dot-animation dot-high-opacity "/>
+                            <div className="dot-settings dot1 dot-animation-delayed dot-high-opacity"/>
+                            <div className="dot-settings dot1 dot-animation-innerborder"/>
+                            <div className="dot-settings dot1 dot-animation-outter-border dot-low-opacity"/>
+                            <div className="dot-settings dot2 dot-animation dot-high-opacity"/>
+                            <div className="dot-settings dot2 dot-animation-delayed dot-high-opacity"/>
+                            <div className="dot-settings dot2 dot-animation-innerborder"/>
+                            <div className="dot-settings dot2 dot-animation-outter-border dot-low-opacity "/>
+                            <div className="dot-settings dot3 dot-animation dot-high-opacity"/>
+                            <div className="dot-settings dot3 dot-animation-delayed dot-high-opacity"/>
+                            <div className="dot-settings dot3 dot-animation-innerborder"/>
+                            <div className="dot-settings dot3 dot-animation-outter-border dot-low-opacity "/>
+                            <div className="dot-settings dot4 dot-animation dot-high-opacity"/>
+                            <div className="dot-settings dot4 dot-animation-delayed dot-high-opacity"/>
+                            <div className="dot-settings dot4 dot-animation-innerborder "/>
+                            <div className="dot-settings dot4 dot-animation-outter-border dot-low-opacity "/>
                         </div>
 
                         <div id="pages">
