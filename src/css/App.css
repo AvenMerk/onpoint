@@ -396,6 +396,7 @@ body {
     width: 63px;
     left: 814px;
     bottom: 32px;
+    z-index: 100;
     background: url('/img/polygon_1.png') no-repeat;
 }
 
@@ -407,7 +408,6 @@ body {
     bottom: 74px;
     width: 640px;
     height: 12px;
-    touch-action: none;
 }
 
 #active-line {
@@ -417,8 +417,6 @@ body {
   width: 640px;
   height: 12px;
   left: 0;
-  z-index: 100;
-  touch-action: none;
 }
 
 #passive-line {
@@ -469,6 +467,72 @@ body {
 .min-year {
     text-align: left;
     z-index: 238;
+}
+
+/* Source page */
+
+.overlay {
+    position: absolute;
+    /*display: inline-block;*/
+    overflow: hidden;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0, 0.3);
+    /*background-image: url('/img/source.png');*/
+    /*background-repeat: no-repeat;*/
+    width: 100%;
+    height: 100%;
+    transition: 1s ease;
+    z-index: 300;
+}
+
+.source-field {
+    background: url('/img/source.png') no-repeat;
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    width: 1024px;
+    height: 768px;
+    bottom: 0;
+}
+
+.source-txt {
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(35, 35, 35);
+    line-height: 0.6;
+    text-align: left;
+    position: absolute;
+    padding-left: 67px;
+    top: 610px;
+    width: 839px;
+}
+
+.source-txt p {
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(35, 35, 35);
+    line-height: 0.6;
+    text-align: left;
+}
+
+.overlay-animation {
+    animation-name: overlay;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.overlay-animation-reverse {
+    animation-name: overlay;
+    animation-duration: 0.5s;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+}
+
+@keyframes overlay {
+    from {bottom: -60vh}
+    to {bottom: 0}
 }
 
 /*Pagination*/

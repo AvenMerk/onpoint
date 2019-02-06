@@ -37,11 +37,14 @@ class App extends Component {
             document.getElementsByClassName('page')[1].classList.remove('active-page');
             this.setState({currentPage: 3});
         } else {
-
+            document.getElementsByClassName("overlay")[0].classList.remove('disable');
+            document.getElementsByClassName("source-field")[0].classList.add('overlay-animation');
+            setTimeout(() => {
+                document.getElementsByClassName("source-field")[0].classList.remove('overlay-animation');
+            }, 500);
         }
     };
 
-    //function for removing event listener
     removeListener = () => {
         document.getElementsByClassName('next')[0].classList.remove('disable');
     };
@@ -69,14 +72,21 @@ class App extends Component {
             //to move to page 2: add animationToTop and remove ToBottomX2
             // (this classes can appear after swipe down/up)
             //then change pagination and currentPage
-        } else if (this.state.currentPage === 3) {
+        } else if (this.state.currentPage === 3
+            && document.getElementsByClassName("overlay")[0].classList.contains('disable')) {
             bg.classList.remove(this.state.animationToBottomX2);
             bg.classList.add(this.state.animationToTop);
             document.getElementsByClassName('page')[1].classList.add('active-page');
             document.getElementsByClassName('page')[2].classList.remove('active-page');
             this.setState({currentPage: 2});
         } else {
-
+            console.log('overlay' );
+            document.getElementsByClassName("source-field")[0].classList.add('overlay-animation-reverse');
+            setTimeout(() => {
+                document.getElementsByClassName("overlay")[0].classList.add('disable');
+                document.getElementsByClassName("source-field")[0].classList
+                    .remove('overlay-animation-reverse')
+            }, 500);
         }
     };
 
@@ -171,6 +181,19 @@ class App extends Component {
                                 <div className="ice-min ice-3-3-top" />
                                 <div className="ice-med ice-3-3-right" />
                                 <div className="ice-max ice-3-3-bottom" />
+                            </div>
+                        </div>
+                        <div className="overlay disable">
+                            <div className="source-field">
+                                <ol className="source-txt">
+                                    <li><p>Defronzo RA. Diabetes. 2009 Apr;58(4):773-95</p></li>
+                                    <li><p>Inzucchi SE, Sherwin RS in: Cecil Medicine 2011</p></li>
+                                    <li><p>Stanley S. Schwartz, Solomon Epstein,Barbara E. Corkey, Struan F.A. Grant,
+                                        James R. Gavin III, and Richard B. Aguilar The Time Is Right</p>
+                                        <p>for a New Classification System for Diabetes: Rationale and Implications
+                                            of the b-Cell–Centric Classification Schema Diabetes Care 2016;</p>
+                                        <p>39:179–186 | DOI: 10.2337/dc15-1585</p></li>
+                                </ol>
                             </div>
                         </div>
                         <Toggler />

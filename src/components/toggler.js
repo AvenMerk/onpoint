@@ -39,8 +39,6 @@ class Toggler extends Component {
             this.setState({posCurrent: this.state.posMax});
             polygon.style.left = `${this.state.posMax}px`;
             line.style.left = `0px`;
-
-            //Specify movements
         } else {
             this.setState({posCurrent: newPosition});
             this.setState({linePosCurrent: this.state.linePosStart + (newPosition - this.state.posMin)});
