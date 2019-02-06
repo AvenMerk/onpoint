@@ -155,6 +155,5 @@ class Toggler extends Component {
         );
     }
 }
-// onClick={() => console.log('click')} onTouchEnd={this.polygonCloser}
 
 export default Toggler;
