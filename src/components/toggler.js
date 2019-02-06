@@ -146,6 +146,11 @@ class Toggler extends Component {
                     <div id="active-line" />
                     <div id="passive-line" />
                 </div>
+                <div className="txt">
+                    <p className="toggler-txt-common min-year">1998</p>
+                    <p className="toggler-txt-common med-year">2009</p>
+                    <p className="toggler-txt-common max-year">2016</p>
+                </div>
             </React.Fragment>
         );
     }

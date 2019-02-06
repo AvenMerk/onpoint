@@ -205,7 +205,6 @@
     right: -55vw;
     filter: blur(3px);
     background: url('/img/ice_max.png') no-repeat;
-
 }
 
 .ice-bottom-1 {
@@ -420,6 +419,48 @@
   opacity: 0.3;
   width: 640px;
   height: 12px;
+}
+
+/*Time marks for toggler*/
+
+.txt {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+    left: 175px;
+    bottom: 20px;
+    width: 665px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: fit-content;
+}
+
+.toggler-txt-common {
+    display: inline-block;
+    font-size: 11px;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(255, 255, 255);
+    line-height: 0.6;
+    -moz-transform: matrix( 1.78603956947011,0,0,1.780085351686,0,0);
+    -webkit-transform: matrix( 1.78603956947011,0,0,1.780085351686,0,0);
+    -ms-transform: matrix( 1.78603956947011,0,0,1.780085351686,0,0);
+}
+
+.max-year {
+    text-align: right;
+    z-index: 238;
+}
+
+.med-year {
+    text-align: center;
+    z-index: 238;
+}
+
+.min-year {
+    text-align: left;
+    z-index: 238;
 }
 
 /*Pages*/
