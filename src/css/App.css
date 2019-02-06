@@ -3,22 +3,21 @@ body {
     padding: 0;
 }
 
-/*Variables for dot animation*/
+/* Переменные для анимации точек (стр.1) */
 :root {
-  --lineCurrent: -640px;
-  --lineCloser: -320px;
-  --posCurrent: 174px;
-  --posCloser: 814px;
+    --lineCurrent: -640px;
+    --lineCloser: -320px;
+    --posCurrent: 174px;
+    --posCloser: 814px;
 }
 
 #container {
-  max-height: 100vh;
-  overflow: hidden;
-  white-space: nowrap;
-  touch-action: none;
+    max-height: 100vh;
+    overflow: hidden;
+    white-space: nowrap;
+    touch-action: none;
 }
 
-/*Static background*/
 #background {
     overflow: hidden;
     position: relative;
@@ -37,9 +36,9 @@ body {
 }
 
 .box-2 {
-  display: block;
-  width: 100vw;
-  height: 100vh;
+    display: block;
+    width: 100vw;
+    height: 100vh;
 }
 
 #box3 {
@@ -47,7 +46,7 @@ body {
     white-space: nowrap;
 }
 
-/*Schemes for horizontal slides*/
+/* Схемы на горизонтальных слайдах */
 .scheme-3-1 {
     overflow: hidden;
     white-space: nowrap;
@@ -78,7 +77,7 @@ body {
     background-image: url('/img/scheme3_3.png');
 }
 
-/*text*/
+/* Текст слайдов */
 
 .text-common {
     position: absolute;
@@ -90,16 +89,16 @@ body {
 
 .text-p {
     font-size: 8px;
-    -moz-transform: matrix( 2.29329922174313,0,0,2.29139022272731,0,0);
-    -webkit-transform: matrix( 2.29329922174313,0,0,2.29139022272731,0,0);
-    -ms-transform: matrix( 2.29329922174313,0,0,2.29139022272731,0,0);
+    -moz-transform: matrix(2.29329922174313, 0, 0, 2.29139022272731, 0, 0);
+    -webkit-transform: matrix(2.29329922174313, 0, 0, 2.29139022272731, 0, 0);
+    -ms-transform: matrix(2.29329922174313, 0, 0, 2.29139022272731, 0, 0);
 }
 
 .txt-1-headline {
     font-size: 24px;
-    -moz-transform: matrix( 2.09302578296686,0,0,2.09395421374965,0,0);
-    -webkit-transform: matrix( 2.09302578296686,0,0,2.09395421374965,0,0);
-    -ms-transform: matrix( 2.09302578296686,0,0,2.09395421374965,0,0);
+    -moz-transform: matrix(2.09302578296686, 0, 0, 2.09395421374965, 0, 0);
+    -webkit-transform: matrix(2.09302578296686, 0, 0, 2.09395421374965, 0, 0);
+    -ms-transform: matrix(2.09302578296686, 0, 0, 2.09395421374965, 0, 0);
     left: 276px;
     top: 167px;
     z-index: 37;
@@ -135,9 +134,9 @@ body {
     font-family: 'Open Sans', sans-serif;
     line-height: 0.6;
     text-align: center;
-    -moz-transform: matrix( 2.09302578296686,0,0,2.09395421374965,0,0);
-    -webkit-transform: matrix( 2.09302578296686,0,0,2.09395421374965,0,0);
-    -ms-transform: matrix( 2.09302578296686,0,0,2.09395421374965,0,0);
+    -moz-transform: matrix(2.09302578296686, 0, 0, 2.09395421374965, 0, 0);
+    -webkit-transform: matrix(2.09302578296686, 0, 0, 2.09395421374965, 0, 0);
+    -ms-transform: matrix(2.09302578296686, 0, 0, 2.09395421374965, 0, 0);
     position: absolute;
     left: 417px;
     top: 1044px;
@@ -156,7 +155,7 @@ body {
     z-index: 241;
 }
 
-/*next*/
+/* Блок "Листайте вниз" */
 
 .next {
     background-image: url('/img/next.png');
@@ -171,7 +170,7 @@ body {
     display: none;
 }
 
-/*Ice settings*/
+/* Параметры кусочков льда */
 
 .ice-min {
     display: block;
@@ -200,7 +199,7 @@ body {
     width: 489px;
 }
 
-/*Ice at 2*/
+/* Лед на 2 стр */
 
 .ice-top-1 {
     top: 20vh;
@@ -232,7 +231,7 @@ body {
     filter: blur(6px);
 }
 
-/*Ice at 3_1*/
+/* Лед на 3_1 */
 
 .ice-3-1-bottom {
     top: -30vh;
@@ -282,7 +281,7 @@ body {
     z-index: -1;
 }
 
-/*Ice at 3_2*/
+/* Лед на 3_2 */
 
 
 .ice-3-2-bottom {
@@ -334,7 +333,7 @@ body {
     z-index: -1;
 }
 
-/*Ice at 3_3*/
+/* Лед на 3_3 */
 
 .ice-3-3-bottom {
     transform: rotate(-23deg);
@@ -386,7 +385,7 @@ body {
     z-index: -1;
 }
 
-/*toggler*/
+/* Параметры тогглера */
 
 #polygon-1 {
     position: absolute;
@@ -411,23 +410,23 @@ body {
 }
 
 #active-line {
-  position: absolute;
-  display: inline-block;
-  background-color: #d1eaff;
-  width: 640px;
-  height: 12px;
-  left: 0;
+    position: absolute;
+    display: inline-block;
+    background-color: #d1eaff;
+    width: 640px;
+    height: 12px;
+    left: 0;
 }
 
 #passive-line {
-  display: inline-block;
-  background-color: #d1eaff;
-  opacity: 0.3;
-  width: 640px;
-  height: 12px;
+    display: inline-block;
+    background-color: #d1eaff;
+    opacity: 0.3;
+    width: 640px;
+    height: 12px;
 }
 
-/*Time marks for toggler*/
+/* Временные отметки для тогглера */
 
 .txt {
     position: absolute;
@@ -449,9 +448,9 @@ body {
     font-family: 'Open Sans', sans-serif;
     color: rgb(255, 255, 255);
     line-height: 0.6;
-    -moz-transform: matrix( 1.78603956947011,0,0,1.780085351686,0,0);
-    -webkit-transform: matrix( 1.78603956947011,0,0,1.780085351686,0,0);
-    -ms-transform: matrix( 1.78603956947011,0,0,1.780085351686,0,0);
+    -moz-transform: matrix(1.78603956947011, 0, 0, 1.780085351686, 0, 0);
+    -webkit-transform: matrix(1.78603956947011, 0, 0, 1.780085351686, 0, 0);
+    -ms-transform: matrix(1.78603956947011, 0, 0, 1.780085351686, 0, 0);
 }
 
 .max-year {
@@ -469,18 +468,15 @@ body {
     z-index: 238;
 }
 
-/* Source page */
+/* Страница источников */
 
 .overlay {
     position: absolute;
-    /*display: inline-block;*/
     overflow: hidden;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0,0,0, 0.3);
-    /*background-image: url('/img/source.png');*/
-    /*background-repeat: no-repeat;*/
+    background-color: rgba(0, 0, 0, 0.3);
     width: 100%;
     height: 100%;
     transition: 1s ease;
@@ -531,11 +527,15 @@ body {
 }
 
 @keyframes overlay {
-    from {bottom: -60vh}
-    to {bottom: 0}
+    from {
+        bottom: -60vh
+    }
+    to {
+        bottom: 0
+    }
 }
 
-/*Pagination*/
+/* Нумерация страниц */
 
 #pages {
     overflow: hidden;
@@ -549,135 +549,145 @@ body {
 }
 
 .page {
-  background-color: #fff;
-  border-radius: 50%;
-  width: 14px;
-  height: 14px;
-  margin-top: 9px;
-  margin-bottom: 9px;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    margin-top: 9px;
+    margin-bottom: 9px;
 }
 
 .active-page {
-  background-color: #f78b1f;
+    background-color: #f78b1f;
 }
 
-/*Dot positioning*/
+/* Расположение точек на стр 1 */
 
 .dot-settings {
-  position: absolute;
-  display: inline-block;
-  overflow: hidden;
-  border-radius: 50%;
-  border: 1px solid #de791B;
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid #de791B;
 }
 
 .dot-high-opacity {
-  background-color: rgba(222,121,27,1);
+    background-color: rgba(222, 121, 27, 1);
 }
 
 .dot-low-opacity {
-  background-color: rgba(222,121,27,0.22);
+    background-color: rgba(222, 121, 27, 0.22);
 }
 
 .dot1 {
-  top: 278px;
-  left: 578px;
-  width: 16px;
-  height: 16px;
+    top: 278px;
+    left: 578px;
+    width: 16px;
+    height: 16px;
 }
 
 .dot2 {
-  top: 434px;
-  left: 282px;
-  width: 10px;
-  height: 10px;
+    top: 434px;
+    left: 282px;
+    width: 10px;
+    height: 10px;
 }
 
 .dot3 {
-  top: 523px;
-  left: 826px;
-  width: 6px;
-  height: 6px;
+    top: 523px;
+    left: 826px;
+    width: 6px;
+    height: 6px;
 }
 
 .dot4 {
-  top: 542px;
-  left: 483px;
-  width: 6px;
-  height: 6px;
+    top: 542px;
+    left: 483px;
+    width: 6px;
+    height: 6px;
 }
 
-/*Dot animation*/
+/* Анимация точек */
 
 .dot-animation {
-  animation-name: pulse1;
-  animation-duration: 3s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+    animation-name: pulse1;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 .dot-animation-delayed {
-  animation-name: pulse1;
-  animation-duration: 3s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-delay: -1.5s;
+    animation-name: pulse1;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: -1.5s;
 }
 
 .dot-animation-innerborder {
-  animation-name: pulse2;
-  animation-duration: 1.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+    animation-name: pulse2;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 .dot-animation-outter-border {
-  animation-name: pulse3;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+    animation-name: pulse3;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 @keyframes pulse1 {
-  from  {transform: scale(0);
-    background-color: rgba(222,121,27);
-    border: 1px solid rgb(222,121,27);
-    opacity: 1;
-  }
-  to {transform: scale(2.6);
-    border: 1px solid rgb(222,121,27);
-    opacity: 0;
+    from {
+        transform: scale(0);
+        background-color: rgba(222, 121, 27);
+        border: 1px solid rgb(222, 121, 27);
+        opacity: 1;
+    }
+    to {
+        transform: scale(2.6);
+        border: 1px solid rgb(222, 121, 27);
+        opacity: 0;
     }
 }
 
 @keyframes pulse2 {
-  from  {transform: scale(1.3);
-    opacity: 0.5;}
-  to {transform: scale(2.6);
-    opacity: 1;}
+    from {
+        transform: scale(1.3);
+        opacity: 0.5;
+    }
+    to {
+        transform: scale(2.6);
+        opacity: 1;
+    }
 }
 
 @keyframes pulse3 {
-  from  {transform: scale(2.6);}
-  to {transform: scale(2.7);}
+    from {
+        transform: scale(2.6);
+    }
+    to {
+        transform: scale(2.7);
+    }
 }
 
-/*animation for swipe top-bottom*/
+/* Анимация для свайпа вниз/вверх*/
 
 .animate-it-to-bottom {
-  animation-name: to-bottom;
-  position: relative;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease;
+    animation-name: to-bottom;
+    position: relative;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
 }
 
 .animate-it-to-bottom-2 {
-  animation-name: to-bottom-2;
-  position: relative;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease;
+    animation-name: to-bottom-2;
+    position: relative;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
 }
 
 .animate-it-to-top-2 {
@@ -697,26 +707,42 @@ body {
 }
 
 @keyframes to-bottom {
-  0%   {top: 0}
-  100% {top: -100vh}
+    0% {
+        top: 0
+    }
+    100% {
+        top: -100vh
+    }
 }
 
 @keyframes to-bottom-2 {
-  0%   {top: -100vh}
-  100% {top: -200vh}
+    0% {
+        top: -100vh
+    }
+    100% {
+        top: -200vh
+    }
 }
 
 @keyframes to-top-2 {
-    0%   {top: -100vh}
-    100% {top: 0}
+    0% {
+        top: -100vh
+    }
+    100% {
+        top: 0
+    }
 }
 
 @keyframes to-top {
-    0%   {top: -200vh}
-    100% {top: -100vh}
+    0% {
+        top: -200vh
+    }
+    100% {
+        top: -100vh
+    }
 }
 
-/*animation for toggle left-right*/
+/* Анимация для перемотки тогглером вправо/влево*/
 
 .animate-it-to-right {
     animation-name: to-right;
@@ -735,68 +761,92 @@ body {
 }
 
 .animate-it-to-left {
-  animation-name: to-left;
-  position: relative;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease;
+    animation-name: to-left;
+    position: relative;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
 }
 
 .animate-it-to-left-2 {
-  animation-name: to-left-2;
-  position: relative;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease;
+    animation-name: to-left-2;
+    position: relative;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
 }
 
 
 @keyframes to-left {
-    0%   {left: -200vw}
-    100% {left: -100vw}
+    0% {
+        left: -200vw
+    }
+    100% {
+        left: -100vw
+    }
 }
 
 @keyframes to-left-2 {
-    0%   {left: -100vw}
-    100% {left: -0}
+    0% {
+        left: -100vw
+    }
+    100% {
+        left: -0
+    }
 }
 
 @keyframes to-right {
-    0%   {left: 0}
-    100% {left: -100vw}
+    0% {
+        left: 0
+    }
+    100% {
+        left: -100vw
+    }
 }
 
 @keyframes to-right-2 {
-    0%   {left: -100vw}
-    100% {left: -200vw}
+    0% {
+        left: -100vw
+    }
+    100% {
+        left: -200vw
+    }
 }
 
 
-/*animation for closer*/
+/* Анимация доводчика для тогглера */
 
 .closer-line {
-  animation-name: closer-line;
-  position: absolute;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease;
+    animation-name: closer-line;
+    position: absolute;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
 
 }
 
 .closer-pos {
-  animation-name: closer-pos;
-  position: absolute;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease;
+    animation-name: closer-pos;
+    position: absolute;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
 }
 
 @keyframes closer-line {
-  0% {left: var(--lineCurrent)}
-  100% {left: var(--lineCloser)}
+    0% {
+        left: var(--lineCurrent)
+    }
+    100% {
+        left: var(--lineCloser)
+    }
 }
 
-@keyframes closer-pos{
-  0% {left: var(--posCurrent)}
-  100% {left: var(--posCloser)}
+@keyframes closer-pos {
+    0% {
+        left: var(--posCurrent)
+    }
+    100% {
+        left: var(--posCloser)
+    }
 }
