@@ -14,7 +14,7 @@ class App extends Component {
 
     //add animation on swipe from bottom to top
     addAnimateToBottomClass = () => {
-        const bg = document.getElementById('bg');
+        const bg = document.getElementById('background');
 
         //to move to page 2: add animationToBottom and remove ToTop and ToTopX2
         // (this classes can appear after swipe down/up)
@@ -51,7 +51,7 @@ class App extends Component {
 
     //add animation on swipe from top to bottom
     addAnimateToTopClass = () => {
-        const bg = document.getElementById('bg');
+        const bg = document.getElementById('background');
 
         //to move to page 1: add animationToTopX2 and remove ToTop,ToBottom and ToBottomX2
         // (this classes can appear after swipe down/up)
@@ -95,7 +95,7 @@ class App extends Component {
             <div id="container">
                 <Swipeable onSwipeUp={this.addAnimateToBottomClass}
                            onSwipeDown={this.addAnimateToTopClass}>
-                    <div id='bg'>
+                    <div id='background'>
 
                         {/*Page 1*/}
                         <div className="box-1">

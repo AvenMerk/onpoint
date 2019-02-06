@@ -19,7 +19,7 @@ body {
 }
 
 /*Static background*/
-#bg {
+#background {
     overflow: hidden;
     position: relative;
     white-space: nowrap;
