@@ -72,22 +72,38 @@ class App extends Component {
                            onSwipeDown={this.addAnimateToTopClass}>
                     <div id='bg'>
                         <div className="background-1">
+                            <div className="txt-1-headline text-common">
+                                <p>Всегда ли цели терапии СД2</p>
+                                <p>на поверхности?</p>
+                            </div>
                             <div className="dot-settings dot1 dot-animation dot-high-opacity "/>
                             <div className="dot-settings dot1 dot-animation-delayed dot-high-opacity"/>
                             <div className="dot-settings dot1 dot-animation-innerborder"/>
                             <div className="dot-settings dot1 dot-animation-outter-border dot-low-opacity"/>
+                            <div className="text-common text-p txt-1-top">
+                                <p>Цель по HbA1c</p>
+                            </div>
                             <div className="dot-settings dot2 dot-animation dot-high-opacity"/>
                             <div className="dot-settings dot2 dot-animation-delayed dot-high-opacity"/>
                             <div className="dot-settings dot2 dot-animation-innerborder"/>
                             <div className="dot-settings dot2 dot-animation-outter-border dot-low-opacity "/>
+                            <div className="text-common text-p txt-1-left">
+                                <p>Гипогликемия</p>
+                            </div>
                             <div className="dot-settings dot3 dot-animation dot-high-opacity"/>
                             <div className="dot-settings dot3 dot-animation-delayed dot-high-opacity"/>
                             <div className="dot-settings dot3 dot-animation-innerborder"/>
                             <div className="dot-settings dot3 dot-animation-outter-border dot-low-opacity "/>
+                            <div className="text-common text-p txt-1-right">
+                                <p>СС риски</p>
+                            </div>
                             <div className="dot-settings dot4 dot-animation dot-high-opacity"/>
                             <div className="dot-settings dot4 dot-animation-delayed dot-high-opacity"/>
                             <div className="dot-settings dot4 dot-animation-innerborder "/>
                             <div className="dot-settings dot4 dot-animation-outter-border dot-low-opacity "/>
+                            <div className="text-common text-p txt-1-bottom">
+                                <p>Осложнения СД</p>
+                            </div>
                             <div className="next" />
                         </div>
                         <div id="pages">

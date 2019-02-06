@@ -68,6 +68,58 @@
     background-image: url('/img/scheme3_3.png');
 }
 
+
+/*text*/
+
+.text-common {
+    position: absolute;
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    color: rgb(13, 49, 156);
+    line-height: 0.6;
+}
+
+.text-p {
+    font-size: 8px;
+    -moz-transform: matrix( 2.29329922174313,0,0,2.29139022272731,0,0);
+    -webkit-transform: matrix( 2.29329922174313,0,0,2.29139022272731,0,0);
+    -ms-transform: matrix( 2.29329922174313,0,0,2.29139022272731,0,0);
+}
+
+.txt-1-headline {
+    font-size: 24px;
+    -moz-transform: matrix( 2.09302578296686,0,0,2.09395421374965,0,0);
+    -webkit-transform: matrix( 2.09302578296686,0,0,2.09395421374965,0,0);
+    -ms-transform: matrix( 2.09302578296686,0,0,2.09395421374965,0,0);
+    left: 276px;
+    top: 167px;
+    z-index: 37;
+}
+
+.txt-1-top {
+    left: 660px;
+    top: 275px;
+    z-index: 35;
+}
+
+.txt-1-left {
+    left: 263px;
+    top: 395px;
+    z-index: 34;
+}
+
+.txt-1-bottom {
+    left: 416px;
+    top: 505px;
+    z-index: 33;
+}
+
+.txt-1-right {
+    left: 817px;
+    top: 485px;
+    z-index: 32;
+}
+
 /*next*/
 
 .next {
