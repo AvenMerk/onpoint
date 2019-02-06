@@ -9,58 +9,67 @@ class App extends Component {
         animationToBottomX2: "animate-it-to-bottom-2",
         animationToTop: "animate-it-to-top",
         animationToTopX2: "animate-it-to-top-2",
+        currentPage: 1,
     };
 
+    //add animation on swipe from bottom to top
     addAnimateToBottomClass = () => {
         const bg = document.getElementById('bg');
 
-        if (bg.classList.contains(this.state.animationToBottom)){
-            bg.classList.add(this.state.animationToBottomX2);
-            bg.classList.remove(this.state.animationToTop);
-            bg.classList.remove(this.state.animationToTopX2);
-            document.getElementsByClassName('page')[2].classList.add('active-page');
-            document.getElementsByClassName('page')[1].classList.remove('active-page');
-        } else if (bg.classList.contains(this.state.animationToTop)){
-            bg.classList.remove(this.state.animationToTop);
-            bg.classList.remove(this.state.animationToTopX2);
-            bg.classList.add(this.state.animationToBottom);
-            document.getElementsByClassName('page')[1].classList.add('active-page');
-            document.getElementsByClassName('page')[0].classList.remove('active-page');
-        } else {
+        //to move to page 2: add animationToBottom and remove ToTop and ToTopX2
+        // (this classes can appear after swipe down/up)
+        //then change pagination and currentPage and disable "next" tab
+        if (this.state.currentPage === 1) {
             bg.classList.add(this.state.animationToBottom);
             bg.classList.remove(this.state.animationToTopX2);
             document.getElementsByClassName('page')[1].classList.add('active-page');
             document.getElementsByClassName('page')[0].classList.remove('active-page');
             document.getElementsByClassName('next')[0].classList.add('disable');
+            this.setState({currentPage: 2});
+
+            //to move to page 3 we need to add animationToBottomX2 and remove ToTop and ToTopX2
+            //then change pagination and currentPage
+        } else if (this.state.currentPage === 2) {
+            bg.classList.add(this.state.animationToBottomX2);
+            bg.classList.remove(this.state.animationToTop);
+            bg.classList.remove(this.state.animationToTopX2);
+            document.getElementsByClassName('page')[2].classList.add('active-page');
+            document.getElementsByClassName('page')[1].classList.remove('active-page');
+            this.setState({currentPage: 3});
+        } else {
+
         }
     };
 
+    //add animation on swipe from top to bottom
     addAnimateToTopClass = () => {
         const bg = document.getElementById('bg');
 
-        if (bg.classList.contains(this.state.animationToTop)) {
+        //to move to page 1: add animationToTopX2 and remove ToTop,ToBottom and ToBottomX2
+        // (this classes can appear after swipe down/up)
+        //then change pagination and currentPage and remove "disable" for "next" tab after end of animation
+        if (this.state.currentPage === 2) {
             bg.classList.add(this.state.animationToTopX2);
             bg.classList.remove(this.state.animationToTop);
             bg.classList.remove(this.state.animationToBottom);
             bg.classList.remove(this.state.animationToBottomX2);
             document.getElementsByClassName('page')[0].classList.add('active-page');
             document.getElementsByClassName('page')[1].classList.remove('active-page');
-            bg.addEventListener("webkitAnimationEnd",
-                ( () => {  document.getElementsByClassName('next')[0].classList.remove('disable');}));
+            bg.addEventListener("webkitAnimationEnd", ( () => {
+                document.getElementsByClassName('next')[0].classList.remove('disable');
+            }));
+            this.setState({currentPage: 1});
 
-        } else if (bg.classList.contains(this.state.animationToBottomX2)) {
+            //to move to page 2: add animationToTop and remove ToBottomX2
+            // (this classes can appear after swipe down/up)
+            //then change pagination and currentPage
+        } else if (this.state.currentPage === 3) {
             bg.classList.remove(this.state.animationToBottomX2);
             bg.classList.add(this.state.animationToTop);
             document.getElementsByClassName('page')[1].classList.add('active-page');
             document.getElementsByClassName('page')[2].classList.remove('active-page');
-        } else if (bg.classList.contains(this.state.animationToBottom)) {
-            bg.classList.remove(this.state.animationToBottom);
-            bg.classList.add(this.state.animationToTopX2);
-            document.getElementsByClassName('page')[0].classList.add('active-page');
-            document.getElementsByClassName('page')[1].classList.remove('active-page');
-            bg.addEventListener("webkitAnimationEnd",
-                ( () => {  document.getElementsByClassName('next')[0].classList.remove('disable');}));
-        } else if (!bg.classList.contains(this.state.animationToTop)) {
+            this.setState({currentPage: 2});
+        } else {
 
         }
     };
@@ -71,6 +80,8 @@ class App extends Component {
                 <Swipeable onSwipeUp={this.addAnimateToBottomClass}
                            onSwipeDown={this.addAnimateToTopClass}>
                     <div id='bg'>
+
+                        {/*Page 1*/}
                         <div className="background-1">
                             <div className="txt-1-headline text-common">
                                 <p>Всегда ли цели терапии СД2</p>
@@ -112,6 +123,8 @@ class App extends Component {
                             <div className="page" />
                         </div>
 
+                        {/*Page 2*/}
+
                         <div className="background-2">
                             <div className="txt-2-headline">
                                 <p>Основа терапии -</p>
@@ -122,6 +135,8 @@ class App extends Component {
                             <div className="ice-bottom-1 ice-med" />
                             <div className="ice-bottom-2 ice-min" />
                         </div>
+
+                        {/*Page 3*/}
 
                         <div id="box3">
                             <div className="background-3-1 animate-it-to-right animate-it-to-right-2">
