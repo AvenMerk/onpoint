@@ -18,7 +18,6 @@ class Toggler extends Component {
     //Calculating moving
     movePolygon = (e) => {
         e.preventDefault();
-        console.log('movePolygon');
         const newPosition = e.changedTouches[0].clientX.toFixed(0) - 20;
         const polygon = document.getElementById('polygon-1');
         const line = document.getElementById('active-line');
@@ -53,7 +52,6 @@ class Toggler extends Component {
     //Add closer to get to min/mid/max point automatically
     polygonCloser = (e) => {
         e.preventDefault();
-        console.log('polygonCloser');
         let pos = this.state.posCurrent;
         let linePos = this.state.linePosCurrent;
         const polygon = document.getElementById("polygon-1");
