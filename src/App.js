@@ -113,6 +113,10 @@ class App extends Component {
                         </div>
 
                         <div className="background-2">
+                            <div className="txt-2-headline">
+                                <p>Основа терапии -</p>
+                                <p>патогенез СД2</p>
+                            </div>
                             <div className="ice-top-1 ice-min" />
                             <div className="ice-top-2 ice-max" />
                             <div className="ice-bottom-1 ice-med" />
@@ -121,16 +125,25 @@ class App extends Component {
 
                         <div id="box3">
                             <div className="background-3-1">
+                                <div className="txt-3">
+                                    <p>Звенья патогенеза СД2</p>
+                                </div>
                                 <div className="ice-min ice-3-1-top" />
                                 <div className="ice-med ice-3-1-right" />
                                 <div className="ice-max ice-3-1-bottom" />
                             </div>
                             <div className="background-3-2">
+                                <div className="txt-3">
+                                    <p>Смертельный октет</p>
+                                </div>
                                 <div className="ice-min ice-3-2-top" />
                                 <div className="ice-med ice-3-2-left" />
                                 <div className="ice-max ice-3-2-bottom" />
                             </div>
                             <div className="background-3-3">
+                                <div className="txt-3">
+                                    <p>Звенья патогенеза СД2</p>
+                                </div>
                                 <div className="ice-min ice-3-3-top" />
                                 <div className="ice-med ice-3-3-right" />
                                 <div className="ice-max ice-3-3-bottom" />

@@ -120,6 +120,33 @@
     z-index: 32;
 }
 
+.txt-2-headline {
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    font-family: 'Open Sans', sans-serif;
+    line-height: 0.6;
+    text-align: center;
+    -moz-transform: matrix( 2.09302578296686,0,0,2.09395421374965,0,0);
+    -webkit-transform: matrix( 2.09302578296686,0,0,2.09395421374965,0,0);
+    -ms-transform: matrix( 2.09302578296686,0,0,2.09395421374965,0,0);
+    position: absolute;
+    left: 417px;
+    top: 1044px;
+    z-index: 36;
+}
+
+.txt-3 {
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(255, 255, 255);
+    line-height: 0.6;
+    text-align: left;
+    position: relative;
+    left: 83px;
+    top: 108px;
+    z-index: 241;
+}
+
 /*next*/
 
 .next {
@@ -200,8 +227,8 @@
 /*Ice at 3_1*/
 
 .ice-3-1-bottom {
-    top: -20vh;
-    left: -25vw;
+    top: -30vh;
+    left: -22vw;
     filter: blur(3px);
 }
 
@@ -217,7 +244,7 @@
 
 .ice-3-1-right {
     transform: rotate(65deg);
-    top: -10vh;
+    top: -20vh;
     right: -50vw;
 }
 
@@ -233,8 +260,8 @@
 
 .ice-3-1-top {
     transform: rotate(-30deg);
-    top: 10vh;
-    left: 80vw;
+    top: 0;
+    left: 85vw;
 }
 
 .ice-3-1-top::after {
@@ -251,7 +278,7 @@
 
 
 .ice-3-2-bottom {
-    top: -20vh;
+    top: -30vh;
     right: -50vw;
     filter: blur(5px);
 }
@@ -268,8 +295,8 @@
 
 .ice-3-2-left {
     transform: rotate(65deg);
-    top: 0;
-    left: -15vw;
+    top: -17vh;
+    left: -9vw;
     filter: blur(1px);
 }
 
@@ -285,8 +312,8 @@
 
 .ice-3-2-top {
     transform: rotate(-30deg);
-    top: 5vh;
-    left: 50vw;
+    top: -5vh;
+    left: 40vw;
 }
 
 .ice-3-2-top::after {
@@ -303,8 +330,8 @@
 
 .ice-3-3-bottom {
     transform: rotate(-23deg);
-    top: -10vh;
-    left: -20vw;
+    top: -20vh;
+    left: -15vw;
     filter: blur(3px);
 }
 
@@ -320,8 +347,8 @@
 
 .ice-3-3-right {
     transform: rotate(65deg);
-    top: -20vh;
-    right: -75vw;
+    top: -22vh;
+    right: -77vw;
     filter: blur(1px);
 }
 
@@ -337,7 +364,7 @@
 
 .ice-3-3-top {
     transform: rotate(-30deg);
-    top: 10vh;
+    top: 0;
     left: -6vw;
 }
 
