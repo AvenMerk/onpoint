@@ -26,10 +26,10 @@
 }
 
 .background-1 {
-  overflow: hidden;
-  position: relative;
-  white-space: nowrap;
-  height: 100vh;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    height: 100vh;
 }
 
 .background-2 {
@@ -66,6 +66,21 @@
     width: 100vw;
     left: 0;
     background-image: url('/img/scheme3_3.png');
+}
+
+/*next*/
+
+.next {
+    background-image: url('/img/next.png');
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    white-space: nowrap;
+    height: 100vh;
+}
+
+.disable {
+    display: none;
 }
 
 /*Ice settings*/

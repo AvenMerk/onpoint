@@ -9,8 +9,6 @@ class App extends Component {
         animationToBottomX2: "animate-it-to-bottom-2",
         animationToTop: "animate-it-to-top",
         animationToTopX2: "animate-it-to-top-2",
-
-        // bgArray: document.getElementById('container').children,
     };
 
     addAnimateToBottomClass = () => {
@@ -33,6 +31,7 @@ class App extends Component {
             bg.classList.remove(this.state.animationToTopX2);
             document.getElementsByClassName('page')[1].classList.add('active-page');
             document.getElementsByClassName('page')[0].classList.remove('active-page');
+            document.getElementsByClassName('next')[0].classList.add('disable');
         }
     };
 
@@ -46,6 +45,9 @@ class App extends Component {
             bg.classList.remove(this.state.animationToBottomX2);
             document.getElementsByClassName('page')[0].classList.add('active-page');
             document.getElementsByClassName('page')[1].classList.remove('active-page');
+            bg.addEventListener("webkitAnimationEnd",
+                ( () => {  document.getElementsByClassName('next')[0].classList.remove('disable');}));
+
         } else if (bg.classList.contains(this.state.animationToBottomX2)) {
             bg.classList.remove(this.state.animationToBottomX2);
             bg.classList.add(this.state.animationToTop);
@@ -56,6 +58,8 @@ class App extends Component {
             bg.classList.add(this.state.animationToTopX2);
             document.getElementsByClassName('page')[0].classList.add('active-page');
             document.getElementsByClassName('page')[1].classList.remove('active-page');
+            bg.addEventListener("webkitAnimationEnd",
+                ( () => {  document.getElementsByClassName('next')[0].classList.remove('disable');}));
         } else if (!bg.classList.contains(this.state.animationToTop)) {
 
         }
@@ -84,8 +88,8 @@ class App extends Component {
                             <div className="dot-settings dot4 dot-animation-delayed dot-high-opacity"/>
                             <div className="dot-settings dot4 dot-animation-innerborder "/>
                             <div className="dot-settings dot4 dot-animation-outter-border dot-low-opacity "/>
+                            <div className="next" />
                         </div>
-
                         <div id="pages">
                             <div className="page active-page" />
                             <div className="page" />
