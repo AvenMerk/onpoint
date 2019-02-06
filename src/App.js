@@ -16,9 +16,7 @@ class App extends Component {
     addAnimateToBottomClass = () => {
         const bg = document.getElementById('background');
 
-        // При переходе на вторую страницу: добавить animationToBottom и убирать ToTop и ToTopX2
-        // (возникают при многократных свайпах вверх-вниз)
-        // Изменить текущий показатель страницы, записать новый номер страницы в state, убрать "next" с помощью disable
+        // добавление анимации при переходе на 2 страницу
         if (this.state.currentPage === 1) {
             bg.classList.add(this.state.animationToBottom);
             bg.classList.remove(this.state.animationToTopX2);
@@ -27,8 +25,7 @@ class App extends Component {
             document.getElementsByClassName('next')[0].classList.add('disable');
             this.setState({currentPage: 2});
 
-            // При переходе на 3 страницу: добавить animationToBottomX2, убрать ToTop and ToTopX2
-            // Изменить текущий показатель страницы, записать новый номер страницы в state
+            // добавление анимации при переходе на 3 страницу
         } else if (this.state.currentPage === 2) {
             bg.classList.add(this.state.animationToBottomX2);
             bg.classList.remove(this.state.animationToTop);
@@ -53,8 +50,7 @@ class App extends Component {
     addAnimateToTopClass = () => {
         const bg = document.getElementById('background');
 
-        // при переходе к странице 1:  добавить animationToTopX2, убрать ToTop,ToBottom и ToBottomX2
-        // Изменить текущий показатель страницы, записать новый номер страницы в state, убрать disable у "next" после конца анимации
+        // добавление анимации при переходе на 1 страницу
         if (this.state.currentPage === 2) {
             bg.classList.add(this.state.animationToTopX2);
             bg.classList.remove(this.state.animationToTop);
@@ -68,8 +64,7 @@ class App extends Component {
             }, 2000);
             this.setState({currentPage: 1});
 
-            // при переходе к странице 2:  добавить animationToTop и убрать ToBottomX2
-            // Изменить текущий показатель страницы, записать новый номер страницы в state
+            // добавление анимации при переходе на 2 страницу
         } else if (this.state.currentPage === 3
             && document.getElementsByClassName("overlay")[0].classList.contains('disable')) {
             bg.classList.remove(this.state.animationToBottomX2);
