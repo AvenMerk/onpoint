@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Swipeable } from 'react-touch';
-import './App.css';
+import './css/App.css';
 import Toggler from './components/toggler'
 
 class App extends Component {
