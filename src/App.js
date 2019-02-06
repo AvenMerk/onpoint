@@ -41,6 +41,11 @@ class App extends Component {
         }
     };
 
+    //function for removing event listener
+    removeListener = () => {
+        document.getElementsByClassName('next')[0].classList.remove('disable');
+    };
+
     //add animation on swipe from top to bottom
     addAnimateToTopClass = () => {
         const bg = document.getElementById('bg');
@@ -55,9 +60,10 @@ class App extends Component {
             bg.classList.remove(this.state.animationToBottomX2);
             document.getElementsByClassName('page')[0].classList.add('active-page');
             document.getElementsByClassName('page')[1].classList.remove('active-page');
-            bg.addEventListener("webkitAnimationEnd", ( () => {
-                document.getElementsByClassName('next')[0].classList.remove('disable');
-            }));
+            bg.addEventListener("webkitAnimationEnd", this.removeListener);
+            setTimeout(() => {
+                bg.removeEventListener("webkitAnimationEnd", this.removeListener);
+            }, 2000);
             this.setState({currentPage: 1});
 
             //to move to page 2: add animationToTop and remove ToBottomX2
