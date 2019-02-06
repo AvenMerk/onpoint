@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 class Toggler extends Component {
 
@@ -15,22 +15,21 @@ class Toggler extends Component {
         animationToLeftX2: "animate-it-to-left-2",
     };
 
-    //Calculating moving
+    // Расчет движения polygon
     movePolygon = (e) => {
         e.preventDefault();
         const newPosition = e.changedTouches[0].clientX.toFixed(0) - 20;
         const polygon = document.getElementById('polygon-1');
         const line = document.getElementById('active-line');
 
-        // Add animation to right/left depends on previous position of polygon
-
+        // Добавление анимации влево/вправо в зависимости от текущего положения polygon
         if (newPosition < this.state.posCurrent) {
             this.addAnimateToLeftClass(newPosition);
         } else if (newPosition > this.state.posCurrent) {
             this.addAnimateToRightClass(newPosition);
         }
 
-        //Restrict diapason of movements
+        // Ограничение возможности движения polygon
         if (newPosition <= this.state.posMin) {
             this.setState({posCurrent: this.state.posMin});
             polygon.style.left = `${this.state.posMin}px`;
@@ -47,7 +46,7 @@ class Toggler extends Component {
         }
     };
 
-    //Add closer to get to min/mid/max point automatically
+    //Доводчик для polygon. Доводит до одного из стационарных положений (крайнее левое/середина/крайнее правое)
     polygonCloser = (e) => {
         e.preventDefault();
         let pos = this.state.posCurrent;
@@ -56,10 +55,9 @@ class Toggler extends Component {
         const line = document.getElementById("active-line");
         const style = document.documentElement.style;
 
-    // set parameters of animation, add animation className to polygon and line,
-        //then change their current position to state
-
-        //to get to middle from left
+        // Задаем параметры анимации, добавляем класс анимации
+        // затем изменяем текущее положение polygon и line и записываем значения в state при:
+        // движении к середине слева
         if (pos >= (this.state.posMiddle - 160) && pos <= this.state.posMiddle) {
             style.setProperty('--lineCurrent', `${linePos}px`);
             style.setProperty('--lineCloser', `-320px`);
@@ -68,10 +66,10 @@ class Toggler extends Component {
 
             polygon.classList.add('closer-pos');
             line.classList.add('closer-line');
-            this.setState( {posCurrent: this.state.posMiddle, linePosCurrent: -320});
+            this.setState({posCurrent: this.state.posMiddle, linePosCurrent: -320});
             this.addAnimateToRightClass(this.state.posMiddle);
 
-            //get to max
+            // движении к крайнему правому положению
         } else if (pos >= (this.state.posMax - 160)) {
             style.setProperty('--lineCurrent', `${linePos}px`);
             style.setProperty('--lineCloser', `0`);
@@ -80,10 +78,10 @@ class Toggler extends Component {
 
             polygon.classList.add('closer-pos');
             line.classList.add('closer-line');
-            this.setState( {posCurrent: this.state.posMax, linePosCurrent: 0});
+            this.setState({posCurrent: this.state.posMax, linePosCurrent: 0});
             this.addAnimateToRightClass(this.state.posMax);
 
-            //get to min
+            // движении к крайнему левому положению
         } else if (pos < (this.state.posMin + 160)) {
             style.setProperty('--lineCurrent', `${linePos}px`);
             style.setProperty('--lineCloser', `${this.state.linePosStart}px`);
@@ -92,10 +90,10 @@ class Toggler extends Component {
 
             polygon.classList.add('closer-pos');
             line.classList.add('closer-line');
-            this.setState( {posCurrent: this.state.posMin, linePosCurrent: this.state.linePosStart});
+            this.setState({posCurrent: this.state.posMin, linePosCurrent: this.state.linePosStart});
             this.addAnimateToLeftClass(this.state.posMin);
 
-            //get to middle from right
+            // движении к середине справа
         } else if (pos < (this.state.posMiddle + 160) && pos > this.state.posMiddle) {
             style.setProperty('--lineCurrent', `${linePos}px`);
             style.setProperty('--lineCloser', `-320px`);
@@ -104,32 +102,32 @@ class Toggler extends Component {
 
             polygon.classList.add('closer-pos');
             line.classList.add('closer-line');
-            this.setState( {posCurrent: this.state.posMiddle, linePosCurrent: -320});
+            this.setState({posCurrent: this.state.posMiddle, linePosCurrent: -320});
             this.addAnimateToLeftClass(this.state.posMiddle);
         }
 
-        //add listener for animation end to set new position for elements and remove animation class
-        // (to be able add this animation again)
+        // вешаем listener на конец анимации, задаем новую (текущую) позицию элемента и удаляем класс анимации
+        // (чтобы была возможность использовать анимацию снова)
         polygon.addEventListener("webkitAnimationEnd",
-            ( () => {
-                polygon.style.left = `${this.state.posCurrent}px`;
-                line.style.left = `${this.state.linePosCurrent}px`;
-                polygon.classList.remove('closer-pos');
-                line.classList.remove('closer-line');
-            }
+            (() => {
+                    polygon.style.left = `${this.state.posCurrent}px`;
+                    line.style.left = `${this.state.linePosCurrent}px`;
+                    polygon.classList.remove('closer-pos');
+                    line.classList.remove('closer-line');
+                }
             ));
     };
 
-    //add animation from left to right depends on current position of element
+    // добавляет анимацию слева-направо, в зависимости от текущего положения polygon
     addAnimateToRightClass = (position) => {
         const bgArray = document.getElementById('box3').children;
         for (let i = 0; i < bgArray.length; i++) {
-            if ( position <= this.state.posMiddle && position>= (this.state.posMiddle - 60)) {
+            if (position <= this.state.posMiddle && position >= (this.state.posMiddle - 60)) {
                 bgArray[i].classList.remove(this.state.animationToLeft);
                 bgArray[i].classList.remove(this.state.animationToLeftX2);
                 bgArray[i].classList.add(this.state.animationToRight);
 
-            } else if (position <= this.state.posMax && position>= (this.state.posMax - 60)) {
+            } else if (position <= this.state.posMax && position >= (this.state.posMax - 60)) {
                 bgArray[i].classList.add(this.state.animationToRightX2);
                 bgArray[i].classList.remove(this.state.animationToLeft);
                 bgArray[i].classList.remove(this.state.animationToLeftX2);
@@ -137,7 +135,7 @@ class Toggler extends Component {
         }
     };
 
-    //add animation from right to left depends on current position of element
+    // добавляет анимацию справа-налево, в зависимости от текущего положения polygon
     addAnimateToLeftClass = (position) => {
         const bgArray = document.getElementById('box3').children;
         for (let i = 0; i < bgArray.length; i++) {
@@ -153,13 +151,13 @@ class Toggler extends Component {
     };
 
 
-    render () {
+    render() {
         return (
             <React.Fragment>
-                <div id="polygon-1"  onTouchMove={this.movePolygon} onTouchEnd={this.polygonCloser} />
+                <div id="polygon-1" onTouchMove={this.movePolygon} onTouchEnd={this.polygonCloser}/>
                 <div className="toggle-line">
-                    <div id="active-line" />
-                    <div id="passive-line" />
+                    <div id="active-line"/>
+                    <div id="passive-line"/>
                 </div>
                 <div className="txt">
                     <p className="toggler-txt-common min-year">1998</p>
