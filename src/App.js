@@ -88,7 +88,7 @@ class App extends Component {
                     <div id='bg'>
 
                         {/*Page 1*/}
-                        <div className="background-1">
+                        <div className="box-1">
                             <div className="txt-1-headline text-common">
                                 <p>Всегда ли цели терапии СД2</p>
                                 <p>на поверхности?</p>
@@ -123,6 +123,9 @@ class App extends Component {
                             </div>
                             <div className="next" />
                         </div>
+
+                        {/*Pagination*/}
+
                         <div id="pages">
                             <div className="page active-page" />
                             <div className="page" />
@@ -131,7 +134,7 @@ class App extends Component {
 
                         {/*Page 2*/}
 
-                        <div className="background-2">
+                        <div className="box-2">
                             <div className="txt-2-headline">
                                 <p>Основа терапии -</p>
                                 <p>патогенез СД2</p>
@@ -145,7 +148,7 @@ class App extends Component {
                         {/*Page 3*/}
 
                         <div id="box3">
-                            <div className="background-3-1 animate-it-to-right animate-it-to-right-2">
+                            <div className="scheme-3-1 animate-it-to-right animate-it-to-right-2">
                                 <div className="txt-3">
                                     <p>Звенья патогенеза СД2</p>
                                 </div>
@@ -153,7 +156,7 @@ class App extends Component {
                                 <div className="ice-med ice-3-1-right" />
                                 <div className="ice-max ice-3-1-bottom" />
                             </div>
-                            <div className="background-3-2 animate-it-to-right animate-it-to-right-2">
+                            <div className="scheme-3-2 animate-it-to-right animate-it-to-right-2">
                                 <div className="txt-3">
                                     <p>Смертельный октет</p>
                                 </div>
@@ -161,7 +164,7 @@ class App extends Component {
                                 <div className="ice-med ice-3-2-left" />
                                 <div className="ice-max ice-3-2-bottom" />
                             </div>
-                            <div className="background-3-3 animate-it-to-right animate-it-to-right-2">
+                            <div className="scheme-3-3 animate-it-to-right animate-it-to-right-2">
                                 <div className="txt-3">
                                     <p>Звенья патогенеза СД2</p>
                                 </div>

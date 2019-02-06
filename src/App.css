@@ -1,3 +1,4 @@
+/*Variables for dot animation*/
 :root {
   --lineCurrent: -640px;
   --lineCloser: -320px;
@@ -12,33 +13,37 @@
   touch-action: none;
 }
 
-#box3 {
-  overflow: hidden;
-  white-space: nowrap;
-}
-
+/*Static background*/
 #bg {
-  overflow: hidden;
-  position: relative;
-  white-space: nowrap;
-  height: 300vh;
-  background: url('/img/bg.png');
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    height: 300vh;
+    background: url('/img/bg.png');
 }
 
-.background-1 {
+/*Boxes*/
+
+.box-1 {
     overflow: hidden;
     position: relative;
     white-space: nowrap;
     height: 100vh;
 }
 
-.background-2 {
+.box-2 {
   display: block;
   width: 100vw;
   height: 100vh;
 }
 
-.background-3-1 {
+#box3 {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/*Schemes for horizontal slides*/
+.scheme-3-1 {
     overflow: hidden;
     white-space: nowrap;
     display: inline-block;
@@ -48,7 +53,7 @@
     background-image: url('/img/scheme3_1.png');
 }
 
-.background-3-2 {
+.scheme-3-2 {
     overflow: hidden;
     white-space: nowrap;
     display: inline-block;
@@ -58,7 +63,7 @@
     background-image: url('/img/scheme3_2.png');
 }
 
-.background-3-3 {
+.scheme-3-3 {
     overflow: hidden;
     white-space: nowrap;
     display: inline-block;
@@ -67,7 +72,6 @@
     left: 0;
     background-image: url('/img/scheme3_3.png');
 }
-
 
 /*text*/
 
@@ -462,7 +466,7 @@
     z-index: 238;
 }
 
-/*Pages*/
+/*Pagination*/
 
 #pages {
   overflow: hidden;
@@ -537,22 +541,22 @@
 
 .dot-animation {
   animation-name: pulse1;
-  animation-duration: 4s;
+  animation-duration: 3s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
 .dot-animation-delayed {
   animation-name: pulse1;
-  animation-duration: 4s;
+  animation-duration: 3s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-delay: -2s;
+  animation-delay: -1.5s;
 }
 
 .dot-animation-innerborder {
   animation-name: pulse2;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -588,7 +592,7 @@
   to {transform: scale(2.7);}
 }
 
-/*animation for swipe*/
+/*animation for swipe top-bottom*/
 
 .animate-it-to-bottom {
   animation-name: to-bottom;
@@ -606,20 +610,20 @@
   animation-timing-function: ease;
 }
 
-.animate-it-to-right {
-  animation-name: to-right;
-  position: relative;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease;
+.animate-it-to-top-2 {
+    animation-name: to-top-2;
+    position: relative;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
 }
 
-.animate-it-to-right-2 {
-  animation-name: to-right-2;
-  position: relative;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease;
+.animate-it-to-top {
+    animation-name: to-top;
+    position: relative;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
 }
 
 @keyframes to-bottom {
@@ -632,33 +636,32 @@
   100% {top: -200vh}
 }
 
-@keyframes to-right {
-  0%   {left: 0}
-  100% {left: -100vw}
+@keyframes to-top-2 {
+    0%   {top: -100vh}
+    100% {top: 0}
 }
 
-@keyframes to-right-2 {
-  0%   {left: -100vw}
-  100% {left: -200vw}
+@keyframes to-top {
+    0%   {top: -200vh}
+    100% {top: -100vh}
 }
 
+/*animation for toggle left-right*/
 
-/*comeback animation*/
-
-.animate-it-to-top-2 {
-  animation-name: to-top-2;
-  position: relative;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease;
+.animate-it-to-right {
+    animation-name: to-right;
+    position: relative;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
 }
 
-.animate-it-to-top {
-  animation-name: to-top;
-  position: relative;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease;
+.animate-it-to-right-2 {
+    animation-name: to-right-2;
+    position: relative;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
 }
 
 .animate-it-to-left {
@@ -677,15 +680,7 @@
   animation-timing-function: ease;
 }
 
-@keyframes to-top-2 {
-  0%   {top: -100vh}
-  100% {top: 0}
-}
 
-@keyframes to-top {
-  0%   {top: -200vh}
-  100% {top: -100vh}
-}
 @keyframes to-left {
     0%   {left: -200vw}
     100% {left: -100vw}
@@ -695,6 +690,17 @@
     0%   {left: -100vw}
     100% {left: -0}
 }
+
+@keyframes to-right {
+    0%   {left: 0}
+    100% {left: -100vw}
+}
+
+@keyframes to-right-2 {
+    0%   {left: -100vw}
+    100% {left: -200vw}
+}
+
 
 /*animation for closer*/
 
