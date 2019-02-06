@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Swipeable } from 'react-touch';
+import React, {Component} from 'react';
+import {Swipeable} from 'react-touch';
 import './css/App.css';
 import Toggler from './components/toggler'
 
@@ -12,13 +12,13 @@ class App extends Component {
         currentPage: 1,
     };
 
-    //add animation on swipe from bottom to top
+    // Добавление анимации при свайпе снизу-вверх
     addAnimateToBottomClass = () => {
         const bg = document.getElementById('background');
 
-        //to move to page 2: add animationToBottom and remove ToTop and ToTopX2
-        // (this classes can appear after swipe down/up)
-        //then change pagination and currentPage and disable "next" tab
+        // При переходе на вторую страницу: добавить animationToBottom и убирать ToTop и ToTopX2
+        // (возникают при многократных свайпах вверх-вниз)
+        // Изменить текущий показатель страницы, записать новый номер страницы в state, убрать "next" с помощью disable
         if (this.state.currentPage === 1) {
             bg.classList.add(this.state.animationToBottom);
             bg.classList.remove(this.state.animationToTopX2);
@@ -27,8 +27,8 @@ class App extends Component {
             document.getElementsByClassName('next')[0].classList.add('disable');
             this.setState({currentPage: 2});
 
-            //to move to page 3 we need to add animationToBottomX2 and remove ToTop and ToTopX2
-            //then change pagination and currentPage
+            // При переходе на 3 страницу: добавить animationToBottomX2, убрать ToTop and ToTopX2
+            // Изменить текущий показатель страницы, записать новый номер страницы в state
         } else if (this.state.currentPage === 2) {
             bg.classList.add(this.state.animationToBottomX2);
             bg.classList.remove(this.state.animationToTop);
@@ -49,13 +49,12 @@ class App extends Component {
         document.getElementsByClassName('next')[0].classList.remove('disable');
     };
 
-    //add animation on swipe from top to bottom
+    // Добавляет анимацию при свайпе сверху вниз
     addAnimateToTopClass = () => {
         const bg = document.getElementById('background');
 
-        //to move to page 1: add animationToTopX2 and remove ToTop,ToBottom and ToBottomX2
-        // (this classes can appear after swipe down/up)
-        //then change pagination and currentPage and remove "disable" for "next" tab after end of animation
+        // при переходе к странице 1:  добавить animationToTopX2, убрать ToTop,ToBottom и ToBottomX2
+        // Изменить текущий показатель страницы, записать новый номер страницы в state, убрать disable у "next" после конца анимации
         if (this.state.currentPage === 2) {
             bg.classList.add(this.state.animationToTopX2);
             bg.classList.remove(this.state.animationToTop);
@@ -69,9 +68,8 @@ class App extends Component {
             }, 2000);
             this.setState({currentPage: 1});
 
-            //to move to page 2: add animationToTop and remove ToBottomX2
-            // (this classes can appear after swipe down/up)
-            //then change pagination and currentPage
+            // при переходе к странице 2:  добавить animationToTop и убрать ToBottomX2
+            // Изменить текущий показатель страницы, записать новый номер страницы в state
         } else if (this.state.currentPage === 3
             && document.getElementsByClassName("overlay")[0].classList.contains('disable')) {
             bg.classList.remove(this.state.animationToBottomX2);
@@ -96,7 +94,7 @@ class App extends Component {
                            onSwipeDown={this.addAnimateToTopClass}>
                     <div id='background'>
 
-                        {/*Page 1*/}
+                        {/* Страница 1 */}
                         <div className="box-1">
                             <div className="txt-1-headline text-common">
                                 <p>Всегда ли цели терапии СД2</p>
@@ -130,58 +128,61 @@ class App extends Component {
                             <div className="text-common text-p txt-1-bottom">
                                 <p>Осложнения СД</p>
                             </div>
-                            <div className="next" />
+                            <div className="next"/>
                         </div>
 
-                        {/*Pagination*/}
+                        {/* Блок с нумерацией страниц */}
 
                         <div id="pages">
-                            <div className="page active-page" />
-                            <div className="page" />
-                            <div className="page" />
+                            <div className="page active-page"/>
+                            <div className="page"/>
+                            <div className="page"/>
                         </div>
 
-                        {/*Page 2*/}
+                        {/* Страница 2 */}
 
                         <div className="box-2">
                             <div className="txt-2-headline">
                                 <p>Основа терапии -</p>
                                 <p>патогенез СД2</p>
                             </div>
-                            <div className="ice-top-1 ice-min" />
-                            <div className="ice-top-2 ice-max" />
-                            <div className="ice-bottom-1 ice-med" />
-                            <div className="ice-bottom-2 ice-min" />
+                            <div className="ice-top-1 ice-min"/>
+                            <div className="ice-top-2 ice-max"/>
+                            <div className="ice-bottom-1 ice-med"/>
+                            <div className="ice-bottom-2 ice-min"/>
                         </div>
 
-                        {/*Page 3*/}
+                        {/* Страница 3 */}
 
                         <div id="box3">
                             <div className="scheme-3-1 animate-it-to-right animate-it-to-right-2">
                                 <div className="txt-3">
                                     <p>Звенья патогенеза СД2</p>
                                 </div>
-                                <div className="ice-min ice-3-1-top" />
-                                <div className="ice-med ice-3-1-right" />
-                                <div className="ice-max ice-3-1-bottom" />
+                                <div className="ice-min ice-3-1-top"/>
+                                <div className="ice-med ice-3-1-right"/>
+                                <div className="ice-max ice-3-1-bottom"/>
                             </div>
                             <div className="scheme-3-2 animate-it-to-right animate-it-to-right-2">
                                 <div className="txt-3">
                                     <p>Смертельный октет</p>
                                 </div>
-                                <div className="ice-min ice-3-2-top" />
-                                <div className="ice-med ice-3-2-left" />
-                                <div className="ice-max ice-3-2-bottom" />
+                                <div className="ice-min ice-3-2-top"/>
+                                <div className="ice-med ice-3-2-left"/>
+                                <div className="ice-max ice-3-2-bottom"/>
                             </div>
                             <div className="scheme-3-3 animate-it-to-right animate-it-to-right-2">
                                 <div className="txt-3">
                                     <p>Звенья патогенеза СД2</p>
                                 </div>
-                                <div className="ice-min ice-3-3-top" />
-                                <div className="ice-med ice-3-3-right" />
-                                <div className="ice-max ice-3-3-bottom" />
+                                <div className="ice-min ice-3-3-top"/>
+                                <div className="ice-med ice-3-3-right"/>
+                                <div className="ice-max ice-3-3-bottom"/>
                             </div>
                         </div>
+
+                        {/* Страница 4 */}
+
                         <div className="overlay disable">
                             <div className="source-field">
                                 <ol className="source-txt">
@@ -195,7 +196,7 @@ class App extends Component {
                                 </ol>
                             </div>
                         </div>
-                        <Toggler />
+                        <Toggler/>
                     </div>
                 </Swipeable>
             </div>
