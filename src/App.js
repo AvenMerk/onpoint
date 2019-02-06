@@ -124,7 +124,7 @@ class App extends Component {
                         </div>
 
                         <div id="box3">
-                            <div className="background-3-1">
+                            <div className="background-3-1 animate-it-to-right animate-it-to-right-2">
                                 <div className="txt-3">
                                     <p>Звенья патогенеза СД2</p>
                                 </div>
@@ -132,7 +132,7 @@ class App extends Component {
                                 <div className="ice-med ice-3-1-right" />
                                 <div className="ice-max ice-3-1-bottom" />
                             </div>
-                            <div className="background-3-2">
+                            <div className="background-3-2 animate-it-to-right animate-it-to-right-2">
                                 <div className="txt-3">
                                     <p>Смертельный октет</p>
                                 </div>
@@ -140,7 +140,7 @@ class App extends Component {
                                 <div className="ice-med ice-3-2-left" />
                                 <div className="ice-max ice-3-2-bottom" />
                             </div>
-                            <div className="background-3-3">
+                            <div className="background-3-3 animate-it-to-right animate-it-to-right-2">
                                 <div className="txt-3">
                                     <p>Звенья патогенеза СД2</p>
                                 </div>

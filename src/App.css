@@ -385,7 +385,7 @@
     overflow: hidden;
     height: 76px;
     width: 63px;
-    left: 174px;
+    left: 814px;
     bottom: 32px;
     background: url('/img/polygon_1.png') no-repeat;
     /*padding: 20px;*/
@@ -408,7 +408,7 @@
   background-color: #d1eaff;
   width: 640px;
   height: 12px;
-  left: -640px;
+  left: 0;
   z-index: 100;
   touch-action: none;
 }
