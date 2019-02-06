@@ -538,13 +538,14 @@ body {
 /*Pagination*/
 
 #pages {
-  overflow: hidden;
-  position: fixed;
-  white-space: nowrap;
-  width: 14px;
-  height: 85px;
-  top: 343px;
-  right: 27px;
+    overflow: hidden;
+    position: fixed;
+    white-space: nowrap;
+    width: 14px;
+    height: 85px;
+    top: 343px;
+    right: 27px;
+    z-index: 100;
 }
 
 .page {

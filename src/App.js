@@ -79,8 +79,7 @@ class App extends Component {
             document.getElementsByClassName('page')[1].classList.add('active-page');
             document.getElementsByClassName('page')[2].classList.remove('active-page');
             this.setState({currentPage: 2});
-        } else {
-            console.log('overlay' );
+        } else if (this.state.currentPage !== 1 && !document.getElementsByClassName("overlay")[0].classList.contains('disable')) {
             document.getElementsByClassName("source-field")[0].classList.add('overlay-animation-reverse');
             setTimeout(() => {
                 document.getElementsByClassName("overlay")[0].classList.add('disable');
