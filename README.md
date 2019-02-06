@@ -8,4 +8,4 @@
 
 ### `npm start`
 
-Открыть [http://localhost:3000](http://localhost:3000) для просмотра в браузере.
+Открыть [http://localhost:3000](http://localhost:3000) в Chrome, в режиме просмотра для iPad - горизонтально.
